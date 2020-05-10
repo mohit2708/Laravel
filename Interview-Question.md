@@ -9,13 +9,19 @@
 
 **[⬆ Back to Top](#table-of-contents)**
 ### Ques. What is Laravel?
-__Ans.__ 
+Laravel is free open source “PHP framework” based on MVC design pattern. It is created by Taylor Otwell. Laravel provides expressive and elegant syntax that helps in creating a wonderful web application easily and quickly.
 
+**[⬆ Back to Top](#table-of-contents)**
+### Ques. What are pros and cons of using Laravel Framework?
+###### Pros of using Laravel Framework
+1. Laravel framework has in-built lightweight blade template engine to speed up compiling task and create layouts with dynamic content easily.<br>
+2. Hassles code reusability.<br>
+3. Eloquent ORM with PHP active record implementation<br>
+4. Built in command line tool “Artisan” for creating a code skeleton , database structure and build their migration<br>
 
 
 ```
-Laravel is free open source “PHP framework” based on MVC design pattern. It is created by Taylor Otwell. Laravel provides expressive and elegant syntax that helps in creating a wonderful web application easily and quickly.
-What are pros and cons of using Laravel Framework? Posted by Sharad Jaiswal Pros of using Laravel Framework 1. Laravel framework has in-built lightweight blade template engine to speed up compiling task and create layouts with dynamic content easily. 2. Hassles code reusability. 3. Eloquent ORM with PHP active record implementation 4. Built in command line tool “Artisan” for creating a code skeleton , database structure and build their migration Cons of using laravel Framework 1. Development process requires you to work with standards and should have real understanding of programming 2. Laravel is new framework and composer is not so strong in compare to npm (for node.js), ruby gems and python pip. 3. Development in laravel is not so fast in compare to ruby on rails. 4. Laravel is lightweight so it has less inbuilt support in compare to django and rails. But this problem can be solved by integrating third party tools, but for large and very custom websites it may be a tedious task
+  Cons of using laravel Framework 1. Development process requires you to work with standards and should have real understanding of programming 2. Laravel is new framework and composer is not so strong in compare to npm (for node.js), ruby gems and python pip. 3. Development in laravel is not so fast in compare to ruby on rails. 4. Laravel is lightweight so it has less inbuilt support in compare to django and rails. But this problem can be solved by integrating third party tools, but for large and very custom websites it may be a tedious task
 Q2.
  0
 Explain Events in laravel ? Posted by Sharad Jaiswal An event is an action or occurrence recognized by a program that may be handled by the program or code. Laravel events provides a simple observer implementation, that allowing you to subscribe and listen for various events/actions that occur in your application.
