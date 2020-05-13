@@ -202,6 +202,7 @@ class Post {
 class Comment {     
 use Sharable;   
 } 
+```
 Now if you were to create new objects out of these classes you would nd that they both have the share() method available: 
 ```laravel
 $post = new Post; 
@@ -211,13 +212,23 @@ echo $comment->share(''); // 'share this item'
 ```
 
 **[⬆ Back to Top](#table-of-contents)**
-### Ques.
+### Ques. Does Laravel support caching?
+Yes, Laravel supports popular caching backends like Memcached and Redis. <br>By default, Laravel is congured to use the le cache driver, which stores the serialized, cached objects in the le system.For large projects, it is recommended to use Memcached or Redis.
 
 **[⬆ Back to Top](#table-of-contents)**
-### Ques.
+### Ques. Explain Laravel’s Middleware?
+As the name suggests, Middleware acts as a middleman between request and response. It is a type of ltering mechanism. For example, Laravel includes a middleware that veries whether the user of the application is authenticated or not. If the user is authenticated, he will be redirected to the home page otherwise, he will be redirected to the login page.<br>
+There are two types of Middleware in Laravel. <br>
+Global Middleware: will run on every HTTP request of the application. <br>
+Route Middleware: will be assigned to a specic route.
 
 **[⬆ Back to Top](#table-of-contents)**
-### Ques.
+### Ques. What is Lumen?
+Lumen is PHP micro-framework that built on Laravel’s top components.It is created by Taylor Otwell. It is perfect option for building Laravel based micro-services and fast REST API’s. It’s one of the fastest micro-frameworks available.<br> You can install Lumen using composer by running below command
+```laravel
+composer create-project --prefer-dist laravel/lumen blog
+```
+
 
 **[⬆ Back to Top](#table-of-contents)**
 ### Ques.
@@ -251,17 +262,8 @@ echo $comment->share(''); // 'share this item'
 
 
 ```
- 0
-
-Does Laravel support caching? Posted by Sharad Jaiswal Yes, Laravel supports popular caching backends like Memcached and Redis. By default, Laravel is congured to use the le cache driver, which stores the serialized, cached objects in the le system.For large projects, it is recommended to use Memcached or Redis.
-Q22.
- 0
-Explain Laravel’s Middleware? Posted by Sharad Jaiswal As the name suggests, Middleware acts as a middleman between request and response. It is a type of ltering mechanism. For example, Laravel includes a middleware that veries whether the user of the application is authenticated or not. If the user is authenticated, he will be redirected to the home page otherwise, he will be redirected to the login page.
-There are two types of Middleware in Laravel. Global Middleware: will run on every HTTP request of the application. Route Middleware: will be assigned to a specic route. Read more about Laravel middlewares
 Q23.
  0
-What is Lumen? Posted by Sharad Jaiswal Lumen is PHP micro-framework that built on Laravel’s top components.It is created by Taylor Otwell. It is perfect option for building Laravel based micro-services and fast REST API’s. It’s one of the fastest micro-frameworks available. You can install Lumen using composer by running below command
-composer create-project --prefer-dist laravel/lumen blog
 Q24.
  0
 Explain Bundles in Laravel? Posted by Sharad Jaiswal In Laravel, bundles are also called packages.Packages are the primary way to extend the functionality of Laravel. Packages might be anything from a great way to work with dates like Carbon, or an entire BDD testing framework like Behat.In Laravel, you can create your custom packages too.You can read more about packages from here
