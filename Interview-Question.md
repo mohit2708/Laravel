@@ -5,7 +5,7 @@
 | No. | Questions |
 |:----:| ---------
 |1  | [What is Laravel?](#Ques-What-is-Laravel) |
-
+|   | [What are pros and cons of using Laravel Framework?](#Ques-What-is-Laravel) |
 
 **[⬆ Back to Top](#table-of-contents)**
 ### Ques. What is Laravel?
@@ -17,71 +17,127 @@ Laravel is free open source “PHP framework” based on MVC design pattern. It
 1. Laravel framework has in-built lightweight blade template engine to speed up compiling task and create layouts with dynamic content easily.<br>
 2. Hassles code reusability.<br>
 3. Eloquent ORM with PHP active record implementation<br>
-4. Built in command line tool “Artisan” for creating a code skeleton , database structure and build their migration<br>
+4. Built in command line tool “Artisan” for creating a code skeleton , database structure and build their migration
+
+###### Cons of using laravel Framework 
+1. Development process requires you to work with standards and should have real understanding of programming<br>
+2. Laravel is new framework and composer is not so strong in compare to npm (for node.js), ruby gems and python pip.<br>
+3. Development in laravel is not so fast in compare to ruby on rails.<br>
+4. Laravel is lightweight so it has less inbuilt support in compare to django and rails. But this problem can be solved by integrating third party tools, but for large and very custom websites it may be a tedious task.
+
+**[⬆ Back to Top](#table-of-contents)**
+### Ques. Explain Events in laravel?
+An event is an action or occurrence recognized by a program that may be handled by the program or code. Laravel events provides a simple observer implementation, that allowing you to subscribe and listen for various events/actions that occur in your application.<br>
+All Event classes are generally stored in the app/Events directory, while their listeners are stored in app/Listeners of your application.
+
+**[⬆ Back to Top](#table-of-contents)**
+### Ques. Explain validations in laravel? 
+In Programming validations are a handy way to ensure that your data is always in a clean and expected format before it gets into your database. Laravel provides several different ways to validate your application incoming data.By default Laravel’s base controller class uses a ValidatesRequests trait which provides a convenient method to validate all incoming HTTP requests coming from client.You can also validate data in laravel by creating Form Request.
+
+**[⬆ Back to Top](#table-of-contents)**
+### How to install laravel via composer?
+You can install Laravel via composer by running below command.
+```php
+composer create-project laravel/laravel your-project-name version 
+```
+
+**[⬆ Back to Top](#table-of-contents)**
+### List some features of laravel 5.0? 
+* Inbuilt CRSF (cross-site request forgery ) Protection.
+* Inbuilt paginations
+* Reverse Routing 
+* Query builder 
+* Route caching 
+* Database Migration
+* IOC (Inverse of Control) Container Or service container.
+
+**[⬆ Back to Top](#table-of-contents)**
+### What is PHP artisan. List out some artisan commands?
+PHP artisan is the command line interface/tool included with Laravel. It provides a number of helpful commands that can help you while you build your application easily. Here are the list of some artisan commands:-<br>
+* php artisan list
+* php artisan help
+* php artisan tinker
+* php artisan make
+* php artisan -versian
+* php artisan make model model_name
+* php artisan make controller controller_name
+
+### List Some default packages provided by Laravel 5.6?
+* Cashier 
+* Envoy
+* Passport
+* Scout 
+* Socialite 
+* Horizon
+
+### What are named routes in Laravel?
+Named routing is another amazing feature of Laravel framework. Named routes allow referring to routes when generating redirects or Urls more comfortably. <br>You can specify named routes by chaining the name method onto the route denition:
+```php
+Route::get('user/profile', function () {
+     // 
+})->name('profile');  
+```
+
+You can specify route names for controller actions:
+```php
+Route::get('user/profile', 'UserController@showProfile')->name('profile'); 
+```
+
+Once you have assigned a name to your routes, you may use the route's name when generating URLs or redirects via the global route function:
+```php
+// Generating URLs... 
+	$url = route('profile'); 
+// Generating Redirects... 
+	return redirect()->route('profile'); 
+```
+
+### What is database migration. How to create migration via artisan?
+Migrations are like version control for your database, that’s allow your team to easily modify and share the application’s database schema. Migrations are typically paired with Laravel’s schema builder to easily build your application’s database schema.<br>
+Use below commands to create migration data via artisan.
+```
+// creating Migration 
+php artisan make:migration create_users_table
+```
+
+### What are service providers? 
+Service Providers are central place where all laravel application is bootstrapped . Your application as well all Laravel core services are also bootstrapped by service providers.<br> All service providers extend the Illuminate\Support\ServiceProvider class. Most service providers contain a register and a boot method. Within the register method, you should only bind things into the service container. You should never attempt to register any event listeners, routes, or any other piece of functionality within the register method.
+
+### Explain Laravel’s service container? 
+One of the most powerful feature of Laravel is its Service Container. It is a powerful tool for resolving class dependencies and performing dependency injection in Laravel.<br> Dependency injection is a fancy phrase that essentially means class dependencies are “injected” into the class via the constructor or, in some cases, “setter” methods.
+
+### What is composer?
+Composer is a tool for managing dependency in PHP. It allows you to declare the libraries on which your project depends on and will manage (install/update) them for you.<br> Laravel utilizes Composer to manage its dependencies.
+
+### What is dependency injection in Laravel? 
+In software engineering, dependency injection is a technique whereby one object supplies the dependencies of another object. A dependency is an object that can be used (a service). An injection is the passing of a dependency to a dependent object (a client) that would use it. The service is made part of the client’s state.[1] Passing the service to the client, rather than allowing a client to build or nd the service, is the fundamental requirement of the pattern.<br>
+You can do dependency injection via Constructor, setter and property injection.
+
+### What are Laravel Contract’s?
+Laravel’s Contracts are nothing but a set of interfaces that dene the core services provided by the Laravel framework.
+
+### Explain Facades in Laravel?
+Laravel Facades provides a static like an interface to classes that are available in the application’s service container. Laravel self-ships with many facades which provide access to almost all features of Laravel ’s. Laravel facades serve as “static proxies” to underlying classes in the service container and provide benets of a terse, expressive syntax while maintaining more testability and exibility than traditional static methods of classes. All of Laravel’s facades are dened in the Illuminate\Support\Facades namespace. You can easily access a facade like so: 
+```php
+use Illuminate\Support\Facades\Cache;
+Route::get('/cache', function () {   
+  return Cache::get('key'); 
+  }); 
+```
+
+
+
+
+
+
+
+
+
+
 
 
 ```
-  Cons of using laravel Framework 1. Development process requires you to work with standards and should have real understanding of programming 2. Laravel is new framework and composer is not so strong in compare to npm (for node.js), ruby gems and python pip. 3. Development in laravel is not so fast in compare to ruby on rails. 4. Laravel is lightweight so it has less inbuilt support in compare to django and rails. But this problem can be solved by integrating third party tools, but for large and very custom websites it may be a tedious task
-Q2.
  0
-Explain Events in laravel ? Posted by Sharad Jaiswal An event is an action or occurrence recognized by a program that may be handled by the program or code. Laravel events provides a simple observer implementation, that allowing you to subscribe and listen for various events/actions that occur in your application.
-All Event classes are generally stored in the app/Events directory, while their listeners are stored in app/Listeners of your application.
-Q3.
- 0
-Explain validations in laravel? Posted by Sharad Jaiswal In Programming validations are a handy way to ensure that your data is always in a clean and expected format before it gets into your database. Laravel provides several different ways to validate your application incoming data.By default Laravel’s base controller class uses a ValidatesRequests trait which provides a convenient method to validate all incoming HTTP requests coming from client.You can also validate data in laravel by creating Form Request. click here read more about data validations in Laravel.
-Q4.
- 0
-How to install laravel via composer ? Posted by Sharad Jaiswal You can install Laravel via composer by running below command.
-composer create-project laravel/laravel your-project-name version 
-Also Read Core PHP Interview Questions and Answers for 2018
-Q5.
- 0
-List some features of laravel 5.0 ? Posted by Sharad Jaiswal Inbuilt CRSF (cross-site request forgery ) Protection. Inbuilt paginations Reverse Routing Query builder Route caching Database Migration IOC (Inverse of Control) Container Or service container.
-Q6.
- 0
-What is PHP artisan. List out some artisan commands ? Posted by Sharad Jaiswal PHP artisan is the command line interface/tool included with Laravel. It provides a number of helpful commands that can help you while you build your application easily. Here are the list of some artisan command:
-php artisan list php artisan help
-Q7.
- 0
-ONLINE INTERVIEW QUESTIONS 
-php artisan tinker php artisan make php artisan –versian php artisan make model model_name php artisan make controller controller_name
-List some default packages provided by Laravel 5.6 ? Posted by Sharad Jaiswal Below are list of some ofcial/ default packages provided by Laravel 5.6
-Cashier Envoy Passport Scout Socialite Horizon
-Q8.
- 0
-What are named routes in Laravel? Posted by Sharad Jaiswal Named routing is another amazing feature of Laravel framework. Named routes allow referring to routes when generating redirects or Urls more comfortably. You can specify named routes by chaining the name method onto the route denition:
-Route::get('user/profile', function () {     // })->name('profile');  
-You can specify route names for controller actions:
-Route::get('user/profile', 'UserController@showProfile')->name('profile'); 
-Once you have assigned a name to your routes, you may use the route's name when generating URLs or redirects via the global route function:
-// Generating URLs... $url = route('profile'); // Generating Redirects... return redirect()->route('profile'); 
-Q9.
- 0
-What is database migration. How to create migration via artisan ? Posted by Sharad Jaiswal Migrations are like version control for your database, that’s allow your team to easily modify and share the application’s database schema. Migrations are typically paired with Laravel’s schema builder to easily build your application’s database schema.
-Use below commands to create migration data via artisan.
-// creating Migration php artisan make:migration create_users_table
-Q10.
- 0
-What are service providers ? Posted by Sharad Jaiswal Service Providers are central place where all laravel application is bootstrapped . Your application as well all Laravel core services are also bootstrapped by service providers. All service providers extend the Illuminate\Support\ServiceProvider class. Most service providers contain a register and a boot method. Within the register method, you should only bind things into the service container. You should never attempt to register any event listeners, routes, or any other piece of functionality within the register method. You can read more about service provider from here
-Q11.
- 0
-Explain Laravel’s service container ? Posted by Sharad Jaiswal
-Q12.
- 0
-ONLINE INTERVIEW QUESTIONS 
-One of the most powerful feature of Laravel is its Service Container. It is a powerful tool for resolving class dependencies and performing dependency injection in Laravel. Dependency injection is a fancy phrase that essentially means class dependencies are “injected” into the class via the constructor or, in some cases, “setter” methods.
-What is composer ? Posted by Sharad Jaiswal Composer is a tool for managing dependency in PHP. It allows you to declare the libraries on which your project depends on and will manage (install/update) them for you. Laravel utilizes Composer to manage its dependencies.
-Q13.
- 0
-What is dependency injection in Laravel ? Posted by Sharad Jaiswal In software engineering, dependency injection is a technique whereby one object supplies the dependencies of another object. A dependency is an object that can be used (a service). An injection is the passing of a dependency to a dependent object (a client) that would use it. The service is made part of the client’s state.[1] Passing the service to the client, rather than allowing a client to build or nd the service, is the fundamental requirement of the pattern. https://en.wikipedia.org/wiki/Dependency_injection You can do dependency injection via Constructor, setter and property injection.
-Q14.
- 0
-What are Laravel Contract’s ? Posted by Sharad Jaiswal Laravel’s Contracts are nothing but a set of interfaces that dene the core services provided by the Laravel framework. Read more about laravel Contract’s
-Q15.
- 0
-Explain Facades in Laravel ? Posted by Sharad Jaiswal Laravel Facades provides a static like an interface to classes that are available in the application’s service container. Laravel self-ships with many facades which provide access to almost all features of Laravel ’s. Laravel facades serve as “static proxies” to underlying classes in the service container and provide benets of a terse, expressive syntax while maintaining more testability and exibility than traditional static methods of classes. All of Laravel’s facades are dened in the Illuminate\Support\Facades namespace. You can easily access a facade like so: 
-use Illuminate\Support\Facades\Cache;  
-Route::get('/cache', function () {     return Cache::get('key'); }); 
+
 Q16.
  0
 What are Laravel eloquent? Posted by Sharad Jaiswal Laravel’s Eloquent ORM is simple Active Record implementation for working with your database. Laravel provide many different ways to interact with your database, Eloquent is most notable of them. Each database table has a corresponding “Model” which is used to interact with that table. Models allow you to query for data in your tables, as well as insert new records into the table.
