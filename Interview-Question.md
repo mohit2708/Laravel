@@ -148,6 +148,99 @@ $product->tag='iphone';
 $product->save(); 
 ```
 
+**[⬆ Back to Top](#table-of-contents)**
+### Ques. How to enable query log in Laravel?
+Use the enableQueryLog method to enable query log in Laravel
+```laravel
+DB::connection()->enableQueryLog(); 
+You can get array of the executed queries by using getQueryLog method: 
+$queries = DB::getQueryLog(); 
+```
+
+**[⬆ Back to Top](#table-of-contents)**
+### Ques. What is reverse routing in Laravel?
+Laravel reverse routing is generating URL's based on route declarations. Reverse routing makes your application so much more exible. It denes a relationship between links and Laravel routes. When a link is created by using names of existing routes, appropriate Uri's are created automatically by Laravel. Here is an example of reverse routing.<br>
+// route declaration<br>
+Route::get(‘login’, ‘users@login’);<br>
+Using reverse routing we can create a link to it and pass in any parameters that we have dened. Optional parameters, if not supplied, are removed from the generated link.<br>
+{{ HTML::link_to_action('users@login') }} <br>
+It will automatically generate an Url like http://xyz.com/login in view.
+
+**[⬆ Back to Top](#table-of-contents)**
+### Ques. How to turn off CRSF protection for specic route in Laravel?
+To turn off CRSF protection in Laravel add following codes in “app/Http/Middleware/VerifyCsrfToken.php”
+```laravel
+//add an array of Routes to skip CSRF check 
+private $exceptUrls = ['controller/route1', 'controller/route2'];  
+//modify this function 
+public function handle($request, Closure $next) { 
+//add this condition foreach($this->exceptUrls as $route) {  
+if ($request->is($route)) {   
+return $next($request);  
+} } 
+return parent::handle($request, $next); 
+} 
+```
+
+**[⬆ Back to Top](#table-of-contents)**
+### Ques. What are traits in Laravel? 
+PHP Traits are simply a group of methods that you want include within another class. A Trait, like an abstract class cannot be instantiated by itself.Trait are created to reduce the limitations of single inheritance in PHP by enabling a developer to reuse sets of methods freely in several independent classes living in different class hierarchies.<br>
+
+Here is an example of trait.
+```laravel
+trait Sharable {     
+public function share($item)   
+{     
+   return 'share this item';   
+} } 
+```
+You could then include this Trait within other classes like this:
+```laravel
+class Post {     
+  use Sharable;   
+ }  
+class Comment {     
+use Sharable;   
+} 
+Now if you were to create new objects out of these classes you would nd that they both have the share() method available: 
+```laravel
+$post = new Post; 
+echo $post->share(''); // 'share this item'    
+$comment = new Comment; 
+echo $comment->share(''); // 'share this item' 
+```
+
+**[⬆ Back to Top](#table-of-contents)**
+### Ques.
+
+**[⬆ Back to Top](#table-of-contents)**
+### Ques.
+
+**[⬆ Back to Top](#table-of-contents)**
+### Ques.
+
+**[⬆ Back to Top](#table-of-contents)**
+### Ques.
+
+**[⬆ Back to Top](#table-of-contents)**
+### Ques.
+
+**[⬆ Back to Top](#table-of-contents)**
+### Ques.
+
+**[⬆ Back to Top](#table-of-contents)**
+### Ques.
+
+**[⬆ Back to Top](#table-of-contents)**
+### Ques.
+
+**[⬆ Back to Top](#table-of-contents)**
+### Ques.
+
+**[⬆ Back to Top](#table-of-contents)**
+### Ques.
+
+
 
 
 
@@ -160,39 +253,6 @@ $product->save();
 ```
  0
 
-Q16.
- 0
-
-Q17.
- 0
-How to enable query log in Laravel ? Posted by Sharad Jaiswal
-Q18.
- 0
-ONLINE INTERVIEW QUESTIONS 
-Use the enableQueryLog method to enable query log in Laravel 
-DB::connection()->enableQueryLog();  You can get array of the executed queries by using getQueryLog method: $queries = DB::getQueryLog(); 
-What is reverse routing in Laravel? Posted by Sharad Jaiswal Laravel reverse routing is generating URL's based on route declarations. Reverse routing makes your application so much more exible. It denes a relationship between links and Laravel routes. When a link is created by using names of existing routes, appropriate Uri's are created automatically by Laravel. Here is an example of reverse routing.
-// route declaration
-Route::get(‘login’, ‘users@login’);
-Using reverse routing we can create a link to it and pass in any parameters that we have dened. Optional parameters, if not supplied, are removed from the generated link.
-{{ HTML::link_to_action('users@login') }} 
-It will automatically generate an Url like http://xyz.com/login in view.
-Q19.
- 0
-How to turn off CRSF protection for specic route in Laravel? Posted by Sharad Jaiswal To turn off CRSF protection in Laravel add following codes in “app/Http/Middleware/VerifyCsrfToken.php”
-  //add an array of Routes to skip CSRF check private $exceptUrls = ['controller/route1', 'controller/route2'];  //modify this function public function handle($request, Closure $next) {  //add this condition foreach($this->exceptUrls as $route) {  if ($request->is($route)) {   return $next($request);  } } return parent::handle($request, $next); } 
-Q20.
- 0
-What are traits in Laravel? Posted by Sharad Jaiswal PHP Traits are simply a group of methods that you want include within another class. A Trait, like an abstract class cannot be instantiated by itself.Trait are created to reduce the limitations of single inheritance in PHP by enabling a developer to reuse sets of methods freely in several independent classes living in different class hierarchies.
-Here is an example of trait.
-trait Sharable {     public function share($item)   {     return 'share this item';   }   } 
-You could then include this Trait within other classes like this:
-Q21.
- 0
-ONLINE INTERVIEW QUESTIONS 
- class Post {     use Sharable;   }   class Comment {     use Sharable;   } 
-Now if you were to create new objects out of these classes you would nd that they both have the share() method available: 
-$post = new Post; echo $post->share(''); // 'share this item'    $comment = new Comment; echo $comment->share(''); // 'share this item' 
 Does Laravel support caching? Posted by Sharad Jaiswal Yes, Laravel supports popular caching backends like Memcached and Redis. By default, Laravel is congured to use the le cache driver, which stores the serialized, cached objects in the le system.For large projects, it is recommended to use Memcached or Redis.
 Q22.
  0
@@ -210,7 +270,7 @@ Q25.
 How to use custom table in Laravel Modal ? Posted by Sharad Jaiswal You can use custom table in Laravel by overriding protected $table property of Eloquent.
 Q26.
  0
-ONLINE INTERVIEW QUESTIONS 
+
  Below is sample uses  
 class User extends Eloquent{  protected $table="my_user_table";  
 } 
