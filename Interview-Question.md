@@ -229,62 +229,57 @@ Lumen is PHP micro-framework that built on Laravel’s top components.It is cre
 composer create-project --prefer-dist laravel/lumen blog
 ```
 
+**[⬆ Back to Top](#table-of-contents)**
+### Ques. Explain Bundles in Laravel?
+In Laravel, bundles are also called packages.Packages are the primary way to extend the functionality of Laravel. Packages might be anything from a great way to work with dates like Carbon, or an entire BDD testing framework like Behat.In Laravel, you can create your custom packages too.
 
 **[⬆ Back to Top](#table-of-contents)**
-### Ques.
-
-**[⬆ Back to Top](#table-of-contents)**
-### Ques.
-
-**[⬆ Back to Top](#table-of-contents)**
-### Ques.
-
-**[⬆ Back to Top](#table-of-contents)**
-### Ques.
-
-**[⬆ Back to Top](#table-of-contents)**
-### Ques.
-
-**[⬆ Back to Top](#table-of-contents)**
-### Ques.
-
-**[⬆ Back to Top](#table-of-contents)**
-### Ques.
-
-
-
-
-
-
-
-
-
-
-
-```
-Q23.
- 0
-Q24.
- 0
-Explain Bundles in Laravel? Posted by Sharad Jaiswal In Laravel, bundles are also called packages.Packages are the primary way to extend the functionality of Laravel. Packages might be anything from a great way to work with dates like Carbon, or an entire BDD testing framework like Behat.In Laravel, you can create your custom packages too.You can read more about packages from here
-Q25.
- 0
-How to use custom table in Laravel Modal ? Posted by Sharad Jaiswal You can use custom table in Laravel by overriding protected $table property of Eloquent.
-Q26.
- 0
-
- Below is sample uses  
-class User extends Eloquent{  protected $table="my_user_table";  
+### Ques. How to use custom table in Laravel Modal?
+You can use custom table in Laravel by overriding protected $table property of Eloquent.
+```laravel
+class User extends Eloquent{  
+   protected $table="my_user_table";  
 } 
-List types of relationships available in Laravel Eloquent? Posted by Sharad Jaiswal Below are types of relationships supported by Laravel Eloquent ORM.
-One To One One To Many One To Many (Inverse) Many To Many Has Many Through Polymorphic Relations Many To Many Polymorphic Relations You can read more about relationships in Laravel Eloquent from here
-Q27.
- 0
-Why are migrations necessary? Posted by Sharad Jaiswal Migrations are necessary because:
-Without migrations, database consistency when sharing an app is almost impossible, especially as more and more people collaborate on the web app. Your production database needs to be synced as well.
-Q28.
- 0
-Provide System requirements for installation of Laravel framework ? Posted by Sharad Jaiswal In order to install Laravel, make sure your server meets the following requirements:
-PHP >= 7.1.3 OpenSSL PHP Extension PDO PHP Extension Mbstring PHP Extension Tokenizer PHP Extension XML PHP Extension Ctype PHP Extension JSON PHP Extension
-Q29.
 ```
+
+**[⬆ Back to Top](#table-of-contents)**
+### Ques. List types of relationships available in Laravel Eloquent? 
+Below are types of relationships supported by Laravel Eloquent ORM.
+* One To One 
+* One To Many 
+* One To Many (Inverse) 
+* Many To Many
+* Has Many Through
+* Polymorphic Relations 
+* Many To Many Polymorphic Relations
+
+**[⬆ Back to Top](#table-of-contents)**
+### Ques. Why are migrations necessary? 
+Migrations are necessary because:<br>
+* Without migrations, database consistency when sharing an app is almost impossible, especially as more and more people collaborate on the web app. 
+* Your production database needs to be synced as well.
+
+**[⬆ Back to Top](#table-of-contents)**
+### Ques. Provide System requirements for installation of Laravel framework?
+In order to install Laravel, make sure your server meets the following requirements:
+* PHP >= 7.1.3 
+* OpenSSL PHP Extension 
+* PDO PHP Extension 
+* Mbstring PHP Extension
+* Tokenizer PHP Extension 
+* XML PHP Extension
+* Ctype PHP Extension
+* JSON PHP Extension
+
+**[⬆ Back to Top](#table-of-contents)**
+### Ques. List some Aggregates methods provided by query builder in Laravel?
+* count() 
+* max() 
+* min() 
+* avg() 
+* sum()
+
+**[⬆ Back to Top](#table-of-contents)**
+### Ques.
+
+
