@@ -33,6 +33,15 @@ All Event classes are generally stored in the app/Events directory, while their 
 **[⬆ Back to Top](#table-of-contents)**
 ### Ques. Explain validations in laravel? 
 In Programming validations are a handy way to ensure that your data is always in a clean and expected format before it gets into your database. Laravel provides several different ways to validate your application incoming data.By default Laravel’s base controller class uses a ValidatesRequests trait which provides a convenient method to validate all incoming HTTP requests coming from client.You can also validate data in laravel by creating Form Request.
+```php
+Laravel validation Example
+
+$validatedData = $request->validate([
+    'name' => 'required|max:255',
+    'username' => 'required|alpha_num',
+    'age' => 'required|numeric',
+  ]);
+```
 
 **[⬆ Back to Top](#table-of-contents)**
 ### Ques. How to install laravel via composer?
