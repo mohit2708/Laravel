@@ -42,6 +42,18 @@
 4. Laravel is lightweight so it has less inbuilt support in compare to django and rails. But this problem can be solved by integrating third party tools, but for large and very custom websites it may be a tedious task.
 
 **[⬆ Back to Top](#table-of-contents)**
+### Ques.What are the steps to install Laravel with composer?
+Laravel installation steps:-
+* Download composer from https://getcomposer.org/download (if you don’t have a composer on your system)
+* Open cmd
+* Goto your htdocs folder.
+* C:\xampp\htdocs> composer create-project laravel/laravel projectname
+OR<br>
+If you install some particular version, then you can use<br>
+composer create-project laravel/laravel project name "5.6"<br>
+If you did not mention any particular version, then it will install with the latest version.
+
+**[⬆ Back to Top](#table-of-contents)**
 ### Ques. Explain Events in laravel?
 An event is an action or occurrence recognized by a program that may be handled by the program or code. Laravel events provides a simple observer implementation, that allowing you to subscribe and listen for various events/actions that occur in your application.<br>
 All Event classes are generally stored in the app/Events directory, while their listeners are stored in app/Listeners of your application.
