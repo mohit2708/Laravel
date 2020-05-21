@@ -12,6 +12,19 @@
 * Laravel is free open source “PHP framework” based on MVC design pattern.
 * It is created by __Taylor Otwell__. 
 * Laravel provides expressive and elegant syntax that helps in creating a wonderful web application easily and quickly.
+* The first version of laravel is released on 9 June 2011.
+
+**[⬆ Back to Top](#table-of-contents)**
+### Ques. What is the Features of Laravel?
+* Eloquent ORM
+* Query builder available
+* Reverse Routing
+* Restful Controllers
+* Migration
+* Database Seeding
+* Autamatic Pagination
+* Unit Testing
+* Homestead
 
 **[⬆ Back to Top](#table-of-contents)**
 ### Ques. What are pros and cons of using Laravel Framework?
