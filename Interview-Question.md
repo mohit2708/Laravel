@@ -254,8 +254,15 @@ Yes, Laravel supports popular caching backends like Memcached and Redis. <br>
 
 **[⬆ Back to Top](#table-of-contents)**
 ### Ques. Explain Laravel’s Middleware?
-As the name suggests, Middleware acts as a middleman between request and response. It is a type of ltering mechanism. For example, Laravel includes a middleware that veries whether the user of the application is authenticated or not. If the user is authenticated, he will be redirected to the home page otherwise, he will be redirected to the login page.<br>
-There are two types of Middleware in Laravel. <br>
+Middleware acts as a middleman between request and response. It is a type of ltering mechanism. For example, Laravel includes a middleware that veries whether the user of the application is authenticated or not. If the user is authenticated, he will be redirected to the home page otherwise, he will be redirected to the login page.<br>
+$nbsp;<br>
+In Laravel, middleware operates as a bridge and filtering mechanism between a request and response. It verifies the authentication of the application users and redirects them according to the authentication results. We can create a middleware in Laravel by executing the following command.<br>
+Example: If a user is not authenticated and it is trying to access the dashboard then, the middleware will redirect that user to the login page.
+```php
+Now UserMiddelware.php file will create in 
+```
+
+###### There are two types of Middleware in Laravel.
 Global Middleware: will run on every HTTP request of the application. <br>
 Route Middleware: will be assigned to a specic route.
 
