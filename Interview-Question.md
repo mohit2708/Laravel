@@ -119,7 +119,7 @@ Service Providers are central place where all laravel application is bootstrapp
 
 **[⬆ Back to Top](#table-of-contents)**
 ### Ques. Explain Laravel’s service container? 
-One of the most powerful feature of Laravel is its Service Container. It is a powerful tool for resolving class dependencies and performing dependency injection in Laravel.<br> Dependency injection is a fancy phrase that essentially means class dependencies are “injected” into the class via the constructor or, in some cases, “setter” methods.
+One of the most powerful feature of Laravel is its Service Container. It is a powerful tool for resolving class dependencies and performing dependency injection in Laravel.<br> __Dependency injection__ is a fancy phrase that essentially means class dependencies are “injected” into the class via the constructor or, in some cases, “setter” methods.
 
 **[⬆ Back to Top](#table-of-contents)**
 ### Ques. What is composer?
