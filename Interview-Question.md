@@ -54,6 +54,10 @@ composer create-project laravel/laravel project name "5.6"<br>
 If you did not mention any particular version, then it will install with the latest version.
 
 **[⬆ Back to Top](#table-of-contents)**
+### Ques. What is composer?
+Composer is a tool for managing dependency in PHP. It allows you to declare the libraries on which your project depends on and will manage (install/update) them for you.<br> Laravel utilizes Composer to manage its dependencies.
+
+**[⬆ Back to Top](#table-of-contents)**
 ### Ques. Explain Events in laravel?
 An event is an action or occurrence recognized by a program that may be handled by the program or code. Laravel events provides a simple observer implementation, that allowing you to subscribe and listen for various events/actions that occur in your application.<br>
 All Event classes are generally stored in the app/Events directory, while their listeners are stored in app/Listeners of your application.
@@ -146,10 +150,6 @@ Service Providers are central place where all laravel application is bootstrapp
 **[⬆ Back to Top](#table-of-contents)**
 ### Ques. Explain Laravel’s service container? 
 One of the most powerful feature of Laravel is its Service Container. It is a powerful tool for resolving class dependencies and performing dependency injection in Laravel.<br> __Dependency injection__ is a fancy phrase that essentially means class dependencies are “injected” into the class via the constructor or, in some cases, “setter” methods.
-
-**[⬆ Back to Top](#table-of-contents)**
-### Ques. What is composer?
-Composer is a tool for managing dependency in PHP. It allows you to declare the libraries on which your project depends on and will manage (install/update) them for you.<br> Laravel utilizes Composer to manage its dependencies.
 
 **[⬆ Back to Top](#table-of-contents)**
 ### Ques. What is dependency injection in Laravel? 
