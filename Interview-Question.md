@@ -59,6 +59,15 @@ If you did not mention any particular version, then it will install with the lat
 * It is an application-level package manager for PHP. It provides a standard format for managing PHP software dependencies and libraries.
 
 **[⬆ Back to Top](#table-of-contents)**
+### Ques. What is a Route?
+* A route is basically an endpoint specified by a URI (Uniform Resource Identifier). It acts as a pointer in Laravel application.
+* Most commonly, a route simply points to a method on a controller and also dictates which HTTP methods are able to hit that URI.
+
+**[⬆ Back to Top](#table-of-contents)**
+### Ques. Why use Route?
+Routes are stored inside files under the /routes folder inside the project's root directory. By default, there are a few different files corresponding to the different "sides" of the application ("sides" comes from the hexagonal architecture methodology).
+
+**[⬆ Back to Top](#table-of-contents)**
 ### Ques. Explain Events in laravel?
 An event is an action or occurrence recognized by a program that may be handled by the program or code. Laravel events provides a simple observer implementation, that allowing you to subscribe and listen for various events/actions that occur in your application.<br>
 All Event classes are generally stored in the app/Events directory, while their listeners are stored in app/Listeners of your application.
