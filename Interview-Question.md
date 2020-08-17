@@ -55,7 +55,8 @@ If you did not mention any particular version, then it will install with the lat
 
 **[⬆ Back to Top](#table-of-contents)**
 ### Ques. What is composer?
-Composer is a tool for managing dependency in PHP. It allows you to declare the libraries on which your project depends on and will manage (install/update) them for you.<br> Laravel utilizes Composer to manage its dependencies.
+* Composer is a tool for managing dependency in PHP. It allows you to declare the libraries on which your project depends on and will manage (install/update) them for you.<br> Laravel utilizes Composer to manage its dependencies.
+* It is an application-level package manager for PHP. It provides a standard format for managing PHP software dependencies and libraries.
 
 **[⬆ Back to Top](#table-of-contents)**
 ### Ques. Explain Events in laravel?
