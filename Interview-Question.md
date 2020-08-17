@@ -22,10 +22,16 @@
 * Reverse Routing
 * Restful Controllers
 * Migration
-* Database Seeding
+* Database Seeding/Database Migration
 * Autamatic Pagination
 * Unit Testing
 * Homestead
+* Inbuilt CRSF (cross-site request forgery ) Protection.
+* Inbuilt paginations
+* Query builder 
+* Route caching 
+* IOC (Inverse of Control) Container Or service container.
+
 
 **[⬆ Back to Top](#table-of-contents)**
 ### Ques. What are pros and cons of using Laravel Framework?
@@ -92,15 +98,6 @@ You can install Laravel via composer by running below command.
 composer create-project laravel/laravel your-project-name version 
 ```
 
-**[⬆ Back to Top](#table-of-contents)**
-### Ques. List some features of laravel 5.0? 
-* Inbuilt CRSF (cross-site request forgery ) Protection.
-* Inbuilt paginations
-* Reverse Routing 
-* Query builder 
-* Route caching 
-* Database Migration
-* IOC (Inverse of Control) Container Or service container.
 
 **[⬆ Back to Top](#table-of-contents)**
 ### Ques. What is PHP artisan. List out some artisan commands?
@@ -206,7 +203,9 @@ $queries = DB::getQueryLog();
 
 **[⬆ Back to Top](#table-of-contents)**
 ### Ques. What is reverse routing in Laravel?
-Laravel reverse routing is generating URL's based on route declarations. Reverse routing makes your application so much more exible. It denes a relationship between links and Laravel routes. When a link is created by using names of existing routes, appropriate Uri's are created automatically by Laravel. Here is an example of reverse routing.<br>
+* Laravel reverse routing is generating URL's based on route declarations. Reverse routing makes your application so much more exible. It denes a relationship between links and Laravel routes. When a link is created by using names of existing routes, appropriate Uri's are created automatically by Laravel. Here is an example of reverse routing.<br>
+* Reverse routing is a method of generating URL based on symbol or name. It makes your Laravel application flexible.
+<br>
 // route declaration<br>
 Route::get(‘login’, ‘users@login’);<br>
 Using reverse routing we can create a link to it and pass in any parameters that we have dened. Optional parameters, if not supplied, are removed from the generated link.<br>
@@ -289,7 +288,8 @@ composer create-project --prefer-dist laravel/lumen blog
 
 **[⬆ Back to Top](#table-of-contents)**
 ### Ques. Explain Bundles in Laravel?
-In Laravel, bundles are also called packages.Packages are the primary way to extend the functionality of Laravel. Packages might be anything from a great way to work with dates like Carbon, or an entire BDD testing framework like Behat.In Laravel, you can create your custom packages too.
+* In Laravel, bundles are also called packages. Packages are the primary way to extend the functionality of Laravel. Packages might be anything from a great way to work with dates like Carbon, or an entire BDD testing framework like Behat.In Laravel, you can create your custom packages too.
+* In Laravel, bundles are referred to as packages. These packages are used to increase the functionality of Laravel. A package can have views, configuration, migrations, routes, and tasks.
 
 **[⬆ Back to Top](#table-of-contents)**
 ### Ques. How to use custom table in Laravel Modal?
