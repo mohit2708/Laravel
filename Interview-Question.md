@@ -262,6 +262,24 @@ echo $comment->share(''); // 'share this item'
 Yes, Laravel supports popular caching backends like Memcached and Redis. <br>By default, Laravel is congured to use the le cache driver, which stores the serialized, cached objects in the le system.For large projects, it is recommended to use Memcached or Redis.
 
 **[⬆ Back to Top](#table-of-contents)**
+### Ques. How To Clear Cache In Laravel?
+###### Clear database cache
+```php
+php artisan cache:clear
+```
+###### Clear config cache
+```php
+php artisan config:cache
+```
+###### Laravel Clear Cache on Shared Hosting Server
+```php
+Route::get('/clear-cache', function() {
+    $exitCode = Artisan::call('cache:clear');
+    return "Cache is cleared";
+});
+```
+
+**[⬆ Back to Top](#table-of-contents)**
 ### Ques. What is HTTP middleware?
 HTTP middleware is a technique for filtering HTTP requests. Laravel includes a middleware that checks whether application user is authenticated or not.
 
