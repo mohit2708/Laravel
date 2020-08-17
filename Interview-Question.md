@@ -253,6 +253,10 @@ echo $comment->share(''); // 'share this item'
 Yes, Laravel supports popular caching backends like Memcached and Redis. <br>By default, Laravel is congured to use the le cache driver, which stores the serialized, cached objects in the le system.For large projects, it is recommended to use Memcached or Redis.
 
 **[⬆ Back to Top](#table-of-contents)**
+### Ques. What is HTTP middleware?
+HTTP middleware is a technique for filtering HTTP requests. Laravel includes a middleware that checks whether application user is authenticated or not.
+
+**[⬆ Back to Top](#table-of-contents)**
 ### Ques. Explain Laravel’s Middleware?
 Middleware acts as a middleman between request and response. It is a type of ltering mechanism. For example, Laravel includes a middleware that veries whether the user of the application is authenticated or not. If the user is authenticated, he will be redirected to the home page otherwise, he will be redirected to the login page.<br>
 $nbsp;<br>
