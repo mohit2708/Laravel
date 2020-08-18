@@ -11,5 +11,10 @@ Scree shot below:-<br>
 ![5](https://github.com/mohit2708/Laravel/blob/master/image/5-composer.jpg)
 ![6](https://github.com/mohit2708/Laravel/blob/master/image/6-composer.jpg)
 ![7](https://github.com/mohit2708/Laravel/blob/master/image/7-composer.jpg)
+
+### Step 2:- 
+Chek the composer install or not<br>
+
 ![8](https://github.com/mohit2708/Laravel/blob/master/image/8-composer.jpg)
 ![9](https://github.com/mohit2708/Laravel/blob/master/image/9-composer.jpg)
+
