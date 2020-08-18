@@ -367,3 +367,22 @@ public function saveData(Request $request)
     return "Request is of Http type";
 }
 ```
+
+**[⬆ Back to Top](#table-of-contents)**
+### How To Get User Details By Id Or Email In Laravel?
+###### Get user by email in Laravel 5
+```php
+public function getUserByEmail(Request $request){
+    $email =$request->input('email');
+    $user = User::where('email',$email)->first();
+    return $user;
+}
+```
+###### Get user by id in Laravel 5
+```php
+public function getUserById(Request $request){
+	$id =$request->input('id');
+    $user =  User::find($id);
+    return $user;
+}
+```
