@@ -33,7 +33,7 @@ composer create-project laravel/laravel project_name
 
 ### Ques: How to check laravel version?
 ```php
-D:\xampp7.3\htdocs\mohit\test>:- test>php artisan --version
+D:\xampp7.3\htdocs\mohit\test>php artisan --version
 ```
 
 
