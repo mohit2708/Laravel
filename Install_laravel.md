@@ -36,6 +36,32 @@ composer create-project laravel/laravel project_name
 D:\xampp7.3\htdocs\mohit\test>php artisan --version
 ```
 
+# Login & Signup
+
+### Step 1:-
+
+Create Controller
+```php
+D:\xampp7.3\htdocs\mohit\test>php artisan make:controller RegistrationController
+```
+```php
+<?php
+namespace App\Http\Controllers;
+use Illuminate\Http\Request;
+
+class RegistrationController extends Controller
+{
+    //
+}
+```
+
+
+
+
+
+
+
+
 
 
 
