@@ -48,8 +48,12 @@ DB_PASSWORD=#Your database password
 
 # Login & Signup
 
-### Step 1:-
+### routes/web.php
+```php
+Route::get('/', 'Auth\RegisterController@create');
+```
 
+### Step 1:-
 Create Controller
 ```php
 D:\xampp7.3\htdocs\mohit\test>php artisan make:controller Auth/RegistrationController
@@ -62,9 +66,13 @@ use Illuminate\Http\Request;
 
 class RegisterController extends Controller
 {
-    //
+    public function create()
+    {
+        return view('registration.create');
+    }
 }
 ```
+
 
 
 
