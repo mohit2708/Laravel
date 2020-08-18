@@ -19,5 +19,17 @@ Chek the composer install or not<br>
 ![9](https://github.com/mohit2708/Laravel/blob/master/image/9-composer.jpg)
 
 ### Step 3:-
+Go to the directory<br>
+c: (OR) d:<br>
+cd xampp<br>
+cd htdocs <br>
+cd folder_name<br>
+
+### Step 4:-
+create Project cmd<br>
+```php
+composer create-project laravel/laravel project_name
+```
+
 
 
