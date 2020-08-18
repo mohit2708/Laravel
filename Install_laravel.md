@@ -36,20 +36,31 @@ composer create-project laravel/laravel project_name
 D:\xampp7.3\htdocs\mohit\test>php artisan --version
 ```
 
+### Setup Database Credentials
+```php
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=#Your database name
+DB_USERNAME=root #Your database username
+DB_PASSWORD=#Your database password
+```
+
 # Login & Signup
 
 ### Step 1:-
 
 Create Controller
 ```php
-D:\xampp7.3\htdocs\mohit\test>php artisan make:controller RegistrationController
+D:\xampp7.3\htdocs\mohit\test>php artisan make:controller Auth/RegistrationController
 ```
 ```php
 <?php
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Auth;
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
-class RegistrationController extends Controller
+class RegisterController extends Controller
 {
     //
 }
