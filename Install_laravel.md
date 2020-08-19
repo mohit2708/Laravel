@@ -53,8 +53,7 @@ DB_PASSWORD=#Your database password
 Route::get('/', 'Auth\RegisterController@create');
 ```
 
-### Step 1:-
-Create Controller
+### Create Controller
 ```php
 D:\xampp7.3\htdocs\mohit\test>php artisan make:controller Auth/RegistrationController
 ```
@@ -71,6 +70,11 @@ class RegisterController extends Controller
         return view('registration.create');
     }
 }
+```
+
+### Create Model
+```php
+php artisan make:model Registration
 ```
 
 
