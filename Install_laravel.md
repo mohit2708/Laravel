@@ -46,6 +46,19 @@ DB_USERNAME=root #Your database username
 DB_PASSWORD=#Your database password
 ```
 
+### Anchor Tag Redirect
+```php
+ <a href="{!! url()->current() !!}">Current path</a>
+OR
+     <a href="{!! url()->full() !!}">Full path</a>
+OR
+     <a href="{!! url('/books/news') !!}">Relative to root path</a>
+
+OUTSIDE EXAMPLE:
+OR
+     <a href="{!! url('http://www.google.com') !!}">Path to google</a>
+```
+
 # Login & Signup
 
 ### routes/web.php
