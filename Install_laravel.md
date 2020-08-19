@@ -76,6 +76,17 @@ class RegisterController extends Controller
 ```php
 php artisan make:model Registration
 ```
+```php
+<?php
+
+namespace App;
+use Illuminate\Database\Eloquent\Model;
+
+class Registration extends Model
+{
+    protected $table = "user";
+}
+```
 
 
 
