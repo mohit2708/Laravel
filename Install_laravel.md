@@ -64,23 +64,46 @@ OR
 ### routes/web.php
 ```php
 Route::get('/', 'Auth\RegisterController@create');
+Route::post('register', 'Auth\RegisterController@insert');
 ```
 
 ### Create Controller
 ```php
 D:\xampp7.3\htdocs\mohit\test>php artisan make:controller Auth/RegistrationController
 ```
+__Controller
 ```php
 <?php
 namespace App\Http\Controllers\Auth;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Registration as User;
+use DB;
 
 class RegisterController extends Controller
 {
     public function create()
     {
         return view('registration.create');
+    }
+    public function insert(Request $request)
+    {
+		      
+        $formData=[
+			'f_name'=>$request->input('f_name'),
+			'l_name'=>$request->input('l_name'),
+            'email'=>$request->input('email'),
+            'password'=>$request->input('password'),            
+            ];
+      //User::insert($formData);
+      //echo "insert succesfully";  
+            try {
+              User::insert($formData);
+              return redirect("/");
+            } catch(Exception $e) {
+                    return redirect()->back()->with("error",$e);
+            }    
+
     }
 }
 ```
@@ -101,6 +124,25 @@ class Registration extends Model
 }
 ```
 
+### Create view:- create.blade.php
+```php
+<form method="post" action="register">
+    {{csrf_field()}}
+	<label for="email">First Name</label>
+    <input type="text" name="f_name" required>
+	
+	<label for="email">Last Name</label>
+    <input type="text" name="l_name" required>
+	
+    <label for="email">Email Address</label>
+    <input type="email" name="email" required>
+
+    <label for="password">Password</label>
+    <input type="password" minlength="8" name="password" required>
+
+    <input class="pure-button pure-button-primary" type="submit" value="Register">
+  </form>
+```
 
 
 
