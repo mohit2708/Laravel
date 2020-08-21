@@ -58,6 +58,12 @@ OUTSIDE EXAMPLE:
 OR
      <a href="{!! url('http://www.google.com') !!}">Path to google</a>
 ```
+# CSS File Put
+```php
+Put your css files into the public folder like public/css/styles.css
+<link href="{{ asset('css/styles.css') }}" rel="stylesheet" type="text/css" >
+<script type="text/javascript" src="{{ asset('js/scripts.js') }}"></script>
+```
 
 # Login & Signup
 
