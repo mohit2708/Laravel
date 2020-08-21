@@ -64,6 +64,39 @@ Put your css files into the public folder like public/css/styles.css
 <link href="{{ asset('css/styles.css') }}" rel="stylesheet" type="text/css" >
 <script type="text/javascript" src="{{ asset('js/scripts.js') }}"></script>
 ```
+# validation
+```php
+return $this->validate($request,[
+	'f_name' => 'required|max:255',
+	'l_name' => 'required',
+	],
+	[
+	'f_name.required' => 'Enter Your Name',
+	'l_name.required' => 'Enter Your Last Name',
+   ]);
+```
+__In view.blade__
+```php
+Form tage sa upar:-
+-------------------
+@if (count($errors) > 0)
+    <div class = "alert alert-danger">
+         <ul>
+              @foreach ($errors->all() as $error)
+                 <li>{{ $error }}</li>
+             @endforeach
+          </ul>
+     </div>
+@endif
+=======================
+every field ke neeche:-
+-----------------------
+@if ($errors->has('f_name'))
+	<span class="help-block" style="color:red;">
+	<strong>{{ $errors->first('f_name') }}</strong>
+	</span>
+@endif
+```
 
 # Login & Signup
 
