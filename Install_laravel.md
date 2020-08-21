@@ -68,7 +68,7 @@ Put your css files into the public folder like public/css/styles.css
 ```php
 In Controller:-
 ---------------
-return $this->validate($request,[
+ $this->validate($request,[
 	'f_name' => 'required|max:255',
 	'l_name' => 'required',
 	'Email'  => 'required|unique:members',
