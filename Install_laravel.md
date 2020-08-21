@@ -66,13 +66,19 @@ Put your css files into the public folder like public/css/styles.css
 ```
 # validation
 ```php
+In Controller:-
+---------------
 return $this->validate($request,[
 	'f_name' => 'required|max:255',
 	'l_name' => 'required',
+	'Email'  => 'required|unique:members',
+	'Password' => 'required|min:8',
 	],
 	[
 	'f_name.required' => 'Enter Your Name',
 	'l_name.required' => 'Enter Your Last Name',
+	'Email.unique'    => 'Sorry, This Email Address Is Already Used',
+	'Password.min'    => 'Password Length Should Be More Than 8 Character',
    ]);
 ```
 __In view.blade__
