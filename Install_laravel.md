@@ -6,21 +6,14 @@ Scree shot below:-<br>
 
 ![1](https://github.com/mohit2708/Laravel/blob/master/image/composer.gif)
 
-
-### Step 2:- 
-Chek the composer install or not<br>
-
-![8](https://github.com/mohit2708/Laravel/blob/master/image/8-composer.jpg)
-![9](https://github.com/mohit2708/Laravel/blob/master/image/9-composer.jpg)
-
-### Step 3:-
+### Step:-
 Go to the directory<br>
 c: (OR) d:<br>
 cd xampp<br>
 cd htdocs <br>
 cd folder_name<br>
 
-### Step 4:-
+### Step:-
 create Project cmd<br>
 ```php
 composer create-project laravel/laravel project_name
