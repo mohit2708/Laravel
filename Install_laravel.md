@@ -18,6 +18,7 @@ create Project by cmd<br>
 ```php
 composer create-project laravel/laravel project_name(or)
 composer create-project --prefer-dist laravel/laravel project_name
+composer create-project --prefer-dist laravel/laravel:^7.0 project_name
 ```
 
 ### Ques: How to check laravel version?
