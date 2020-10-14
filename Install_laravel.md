@@ -14,9 +14,10 @@ cd htdocs <br>
 cd folder_name<br>
 
 ### Step:-
-create Project cmd<br>
+create Project by cmd<br>
 ```php
-composer create-project laravel/laravel project_name
+composer create-project laravel/laravel project_name(or)
+composer create-project --prefer-dist laravel/laravel project_name
 ```
 
 ### Ques: How to check laravel version?
