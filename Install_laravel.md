@@ -18,6 +18,11 @@ cd folder_name<br>
 >> php artisan make:controller Auth/AdminController
 ```
 
+### Create Model
+```php
+>> php artisan make:model Registration
+```
+
 ### Database Migrate
 ```php
 php artisan migrate
@@ -378,9 +383,6 @@ class RegisterController extends Controller
 ```
 
 ### Create Model
-```php
-php artisan make:model Registration
-```
 ```php
 <?php
 
