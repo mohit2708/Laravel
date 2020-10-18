@@ -13,8 +13,13 @@ cd xampp<br>
 cd htdocs <br>
 cd folder_name<br>
 
+### Controler Create
+```php
+>> php artisan make:controller Auth/AdminController
+```
+
 ### Database Migrate
-```laravel
+```php
 php artisan migrate
 ```
 
