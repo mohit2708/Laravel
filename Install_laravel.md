@@ -13,23 +13,7 @@ cd xampp<br>
 cd htdocs <br>
 cd folder_name<br>
 
-### Controler Create
-```php
->> php artisan make:controller Auth/AdminController
-```
-
-### Create Model
-```php
->> php artisan make:model Registration
-```
-
-### Database Migrate
-```php
-php artisan migrate
-```
-
-### Step:-
-create Project by cmd<br>
+### Create Project 
 ```php
 composer create-project laravel/laravel project_name(or)
 composer create-project --prefer-dist laravel/laravel project_name
@@ -50,6 +34,22 @@ DB_DATABASE=#Your database name
 DB_USERNAME=root #Your database username
 DB_PASSWORD=#Your database password
 ```
+
+### Create Controller
+```php
+>> php artisan make:controller Auth/AdminController
+```
+
+### Create Model
+```php
+>> php artisan make:model Registration
+```
+
+### Database Migrate
+```php
+php artisan migrate
+```
+
 
 ### Anchor Tag Redirect
 ```php
