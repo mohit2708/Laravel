@@ -13,6 +13,11 @@ cd xampp<br>
 cd htdocs <br>
 cd folder_name<br>
 
+### Database Migrate
+```laravel
+php artisan migrate
+```
+
 ### Step:-
 create Project by cmd<br>
 ```php
