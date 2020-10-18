@@ -164,6 +164,46 @@ class Registration extends Model
 }
 ```
 
+### Show list from database:-
+__In Controler__
+```laravel
+use App\User;
+
+public function index()
+	{
+		$users = User::all();
+		return view('admin_deshboard', compact('users'));
+	}
+============================================================
+use DB;
+
+public function index()
+{
+   $users = DB::select('select * from student_details');
+    return view('stud_view',['users'=>$users]);
+}
+```
+__In View__
+```laravel
+<table border = "1">
+<tr>
+<td>Id</td>
+<td>First Name</td>
+<td>Last Name</td>
+<td>City Name</td>
+<td>Email</td>
+</tr>
+@foreach ($users as $user)
+<tr>
+<td>{{ $user->id }}</td>
+<td>{{ $user->first_name }}</td>
+<td>{{ $user->last_name }}</td>
+<td>{{ $user->city_name }}</td>
+<td>{{ $user->email }}</td>
+</tr>
+@endforeach
+</table>
+```
 ### Create view:- create.blade.php
 ```php
 <form method="post" action="register">
