@@ -45,11 +45,35 @@ DB_PASSWORD=#Your database password
 >> php artisan make:model Registration
 ```
 
+### Create Middalware
+```php
+php artisan make:middleware AccessControl
+```
+
 ### Database Migrate
 ```php
 php artisan migrate
+===============Specific Table Migration===========================
+php artisan migrate --path=/database/migrations/fileName.php
+```
+__Jab Migrate Command Run Karte Hai to Some error aati hai
+```php
+app->providers->AppServiceProvider.php
+============add code========
+use Illuminate\Support\ServiceProvider;
+use Illuminate\Support\Facades\Schema;
+
+public function boot()
+{
+ Schema::defaultStringLength(191);
+}
 ```
 
+### Server Run
+```php
+php artisan serve
+php artisan serve --port=1212
+```
 
 ### Anchor Tag Redirect
 ```php
