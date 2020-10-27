@@ -254,6 +254,8 @@ __Login__
 Route::get('login', 'Auth\LoginController@login')->name('login');
 Route::post('login', 'Auth\LoginController@doLogin');
 Route::get('logout', 'Auth\LoginController@logout')->name('logout');
+
+Route::get('/home', 'HomeController@home')->name('home');
 ==========================LoginController.php====================
 public function login()
 	{
@@ -458,6 +460,37 @@ Ajax for status active or deactive
 </script>
 ```
 
+__Admin Middalware for go to deshboard__
+```php
+===========================AdminMiddleware.php======================
+class AdminMiddleware
+{
+    /**
+     * Handle an incoming request.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  \Closure  $next
+     * @return mixed
+     */
+    public function handle($request, Closure $next)
+    {
+        if(Auth::user()->role_type == 'admin'){
+            return $next($request);
+        }
+        else{
+            return redirect('home')->with('status', 'you are not admin');
+        }
+    }
+}
+============kernal.php===============
+   protected $routeMiddleware = [
+      'admin' => \App\Http\Middleware\AdminMiddleware::class,
+    ];
+===========================web.php=========================
+Route::group(['middleware' => ['auth', 'admin']], function(){
+Route::get('admin-deshboard', 'AdminController@adminDeshboard')->name('admin-deshboard');
+});
+```
 
 
 
