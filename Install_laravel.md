@@ -588,25 +588,6 @@ __In View__
 @endforeach
 </table>
 ```
-### Create view:- create.blade.php
-```php
-<form method="post" action="register">
-    {{csrf_field()}}
-	<label for="email">First Name</label>
-    <input type="text" name="f_name" required>
-	
-	<label for="email">Last Name</label>
-    <input type="text" name="l_name" required>
-	
-    <label for="email">Email Address</label>
-    <input type="email" name="email" required>
-
-    <label for="password">Password</label>
-    <input type="password" minlength="8" name="password" required>
-
-    <input class="pure-button pure-button-primary" type="submit" value="Register">
-  </form>
-```
 
 
 
