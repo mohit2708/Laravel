@@ -372,6 +372,92 @@ public function logout() {
 
 ```
 
+__Admin Controller__
+```php
+=================web.php====================
+Route::group(['middleware' => ['auth', 'admin']], function(){
+Route::get('admin-deshboard', 'AdminController@adminDeshboard')->name('admin-deshboard');
+});
+Route::get('status', 'AdminController@status')->name('status');
+====================AdminController.php===============================
+class AdminController extends Controller
+{	
+	public function __construct()
+	{
+		$this->middleware('auth');
+	}
+    public function adminDeshboard(Request $request)
+	{
+		//$users = User::all();	//all user
+		$users = User::where('id', '!=', 1)->get(); //admin user remove			
+		return view('admin_deshboard', compact('users'));
+	}
+	public function status(Request $request){		
+		$post = User::find($request->id);
+		if($post->status == 1){
+			$changestatus = 0;
+		}
+		else{ $changestatus = 1;
+		}
+		$post->status = $changestatus;
+		$post->save();		
+	}
+}
+======================admindeshboard.blade.php===========================
+<link href="https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css" rel="stylesheet">
+<script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
+<div class="container">
+  <h2>User List</h2>
+  <p>table</p>            
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Status</th>
+      </tr>
+    </thead>
+    <tbody>
+    @foreach($users as $user)
+      <tr>
+        <td>{{$user->name}}</td>
+        <td>{{$user->email}}</td>
+        
+        <!-- <td class="toggle-class" alt="{{$user->id}}"><a href="#">@if($user->status == 1) Active @else Deactivate @endif</a></td> -->
+        <td>
+    <input data-id="{{$user->id}}" class="toggle-class" type="checkbox" data-onstyle="success" data-offstyle="danger" data-toggle="toggle" data-on="Active" data-off="InActive" {{ $user->status ? 'checked' : '' }}>
+        </td>
+      </tr>
+    @endforeach
+    </tbody>
+  </table>
+</div>
+/*
+Ajax for status active or deactive
+*/
+<script type="text/javascript">
+  $(document).ready(function() {
+  $(".toggle-class").change(function()  {
+    //alert('sagsd');
+    var id = $(this).attr("data-id");
+    //var status = $("#activitymessage").val();
+    var id = id;
+    $.ajax({
+      type: "get",
+      url: "{{route("status")}}",
+      data: {id: id},
+      success: function(data){
+              console.log(data.success)
+            }
+      //       success: function(msg) {
+      //   location.reload();
+      // }
+    });
+   });
+  });
+</script>
+```
+
 
 
 
