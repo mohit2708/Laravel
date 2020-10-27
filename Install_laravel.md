@@ -182,112 +182,7 @@ public function doRegister(Request $request)
       return redirect('login');
 	}
 =======================signup.blade.php=========================
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,700">
-<title>Bootstrap Simple Registration Form</title>
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
-<style>
-body {
-	color: #fff;
-	background: #63738a;
-	font-family: 'Roboto', sans-serif;
-}
-.form-control {
-	height: 40px;
-	box-shadow: none;
-	color: #969fa4;
-}
-.form-control:focus {
-	border-color: #5cb85c;
-}
-.form-control, .btn {        
-	border-radius: 3px;
-}
-.signup-form {
-	width: 450px;
-	margin: 0 auto;
-	padding: 30px 0;
-  	font-size: 15px;
-}
-.signup-form h2 {
-	color: #636363;
-	margin: 0 0 15px;
-	position: relative;
-	text-align: center;
-}
-.signup-form h2:before, .signup-form h2:after {
-	content: "";
-	height: 2px;
-	width: 30%;
-	background: #d4d4d4;
-	position: absolute;
-	top: 50%;
-	z-index: 2;
-}	
-.signup-form h2:before {
-	left: 0;
-}
-.signup-form h2:after {
-	right: 0;
-}
-.signup-form .hint-text {
-	color: #999;
-	margin-bottom: 30px;
-	text-align: center;
-}
-.signup-form form {
-	color: #999;
-	border-radius: 3px;
-	margin-bottom: 15px;
-	background: #f2f3f7;
-	box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
-	padding: 30px;
-}
-.signup-form .form-group {
-	margin-bottom: 20px;
-}
-.signup-form input[type="checkbox"] {
-	margin-top: 3px;
-}
-.signup-form .btn {        
-	font-size: 16px;
-	font-weight: bold;		
-	min-width: 140px;
-	outline: none !important;
-}
-.signup-form .row div:first-child {
-	padding-right: 10px;
-}
-.signup-form .row div:last-child {
-	padding-left: 10px;
-}    	
-.signup-form a {
-	color: #fff;
-	text-decoration: underline;
-}
-.signup-form a:hover {
-	text-decoration: none;
-}
-.signup-form form a {
-	color: #5cb85c;
-	text-decoration: none;
-}	
-.signup-form form a:hover {
-	text-decoration: underline;
-}  
-</style>
-</head>
-<body>
-<div class="signup-form">    
-	<form method="POST" action="{{ route('register') }}">
+<form method="POST" action="{{ route('register') }}">
 		@csrf
 		<h2>Register</h2>
 		<p class="hint-text">Create your account. It's free and only takes a minute.</p>
@@ -352,9 +247,6 @@ body {
         </div>
     </form>
 	<div class="text-center">Already have an account? <a href="{{ route('login') }}">Sign in</a></div>
-</div>
-</body>
-</html>
 ```
 __Login__
 ```php
@@ -367,8 +259,7 @@ public function login()
 	{
 		return view('auth.login');
 	}
-	public function doLogin(Request $request)
-    {
+public function doLogin(Request $request) {
         $request->validate([
             'email' => 'required|string|email',
             'password' => 'required|string',
@@ -379,117 +270,53 @@ public function login()
         if (Auth::attempt($credentials)) {
             return redirect()->intended('home');
         }
-
         return redirect('login')->with('error', 'Oppes! You have entered invalid credentials');
     }
-	public function logout() {
-		Auth::logout();
+public function doLogin(Request $request)
+    {
+        $input = $request->all();
 
-		return redirect('login');
+		$remember = ($request->get('remember')) ? true : false;
+		$validate = Validator::make($input, [
+			'email' 	=> 'required',
+			'password' 	=> 'required'
+		]);	
+		
+		if (!$validate->fails()){
+			
+			$userdata = array(
+				'email'  	=> $request->get('email'),
+				'password'  => $request->get('password')
+			);
+			
+			if (Auth::attempt($userdata,$remember)) {
+				$user = Auth::user();
+				if($user->status == 0){
+					Auth::logout();
+					return Redirect::back()->with('error', 'Your account is not activated.');
+				}
+				if(($user->role_type == 'admin')){
+					//updateLastLogin($user->id);		
+					return redirect()->intended('admin-deshboard');
+				}else{
+					return redirect('home');
+				}
+			}else{
+				return Redirect::back()->with('error', 'Incorrect username or password.');
+			}
+		}else{
+			return Redirect::back()->with('error', 'Incorrect username or password.');
+		}
+}    
+/*
+Logout Function
+*/
+public function logout() {
+	Auth::logout();
+	//Auth::guard('admin')->logout();
+	return redirect('login');
 	}
 =======================login.blade.php======================
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<title>Bootstrap Simple Login Form</title>
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
-<style>
-body {
-	color: #fff;
-	background: #63738a;
-	font-family: 'Roboto', sans-serif;
-}
-.form-control {
-	height: 40px;
-	box-shadow: none;
-	color: #969fa4;
-}
-.form-control:focus {
-	border-color: #5cb85c;
-}
-.form-control, .btn {        
-	border-radius: 3px;
-}
-.login-form {
-	width: 450px;
-	margin: 0 auto;
-	padding: 30px 0;
-  	font-size: 15px;
-}
-.login-form h2 {
-	color: #636363;
-	margin: 0 0 15px;
-	position: relative;
-	text-align: center;
-}
-.login-form h2:before, .login-form h2:after {
-	content: "";
-	height: 2px;
-	width: 30%;
-	background: #d4d4d4;
-	position: absolute;
-	top: 50%;
-	z-index: 2;
-}	
-.login-form h2:before {
-	left: 0;
-}
-.login-form h2:after {
-	right: 0;
-}
-.login-form .hint-text {
-	color: #999;
-	margin-bottom: 30px;
-	text-align: center;
-}
-.login-form form {
-	color: #999;
-	border-radius: 3px;
-	margin-bottom: 15px;
-	background: #f2f3f7;
-	box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
-	padding: 30px;
-}
-.login-form .form-group {
-	margin-bottom: 20px;
-}
-.login-form input[type="checkbox"] {
-	margin-top: 3px;
-}
-.login-form .btn {        
-	font-size: 16px;
-	font-weight: bold;		
-	min-width: 140px;
-	outline: none !important;
-}
-.login-form .row div:first-child {
-	padding-right: 10px;
-}
-.login-form .row div:last-child {
-	padding-left: 10px;
-}    	
-.login-form a {
-	color: #fff;
-	text-decoration: underline;
-}
-.login-form a:hover {
-	text-decoration: none;
-}
-.login-form form a {
-	color: #5cb85c;
-	text-decoration: none;
-}	
-.login-form form a:hover {
-	text-decoration: underline;
-} 
-</style>
-</head>
 <body>
 	@if(session()->has('error'))
 		<div class="alert alert-danger">
@@ -542,8 +369,6 @@ body {
     </form>
     <p class="text-center"><a href="{{ route('register') }}">Create New Account</a></p>
 </div>
-</body>
-</html>
 
 ```
 
