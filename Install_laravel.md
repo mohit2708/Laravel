@@ -51,11 +51,20 @@ php artisan make:middleware AccessControl
 ```
 
 ### Database Migrate
+__Create migrate file__
+```php
+php artisan make:migration create_table_name_table
+```
+__All Excecute file__
 ```php
 php artisan migrate
-===============Specific Table Migration===========================
+```
+
+__Excute File__
+```php
 php artisan migrate --path=/database/migrations/fileName.php
 ```
+
 __Jab Migrate Command Run Karte Hai to Some error aati hai
 ```php
 app->providers->AppServiceProvider.php
