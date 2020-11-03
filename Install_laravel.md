@@ -54,6 +54,12 @@ php artisan make:middleware AccessControl
 __Create migrate file__
 ```php
 php artisan make:migration create_table_name_table
+
+$table->increments('id');
+$table->string('field_name', 255)->nullable();
+$table->string('field_name', 255)->nullable();           
+$table->timestamps();
+
 ```
 __All Excecute file__
 ```php
