@@ -35,6 +35,18 @@ DB_USERNAME=root #Your database username
 DB_PASSWORD=#Your database password
 ```
 
+### Database Migrate
+__Create migrate file__
+```php
+php artisan make:migration create_table_name_table
+```
+```
+$table->increments('id');
+$table->string('field_name', 255)->nullable();
+$table->string('field_name', 255)->nullable();           
+$table->timestamps();
+```
+
 ### Create Controller
 ```php
 >> php artisan make:controller Auth/AdminController
@@ -50,17 +62,6 @@ DB_PASSWORD=#Your database password
 php artisan make:middleware AccessControl
 ```
 
-### Database Migrate
-__Create migrate file__
-```php
-php artisan make:migration create_table_name_table
-
-$table->increments('id');
-$table->string('field_name', 255)->nullable();
-$table->string('field_name', 255)->nullable();           
-$table->timestamps();
-
-```
 __All Excecute file__
 ```php
 php artisan migrate
