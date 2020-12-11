@@ -13,7 +13,7 @@ cd xampp<br>
 cd htdocs <br>
 cd folder_name<br>
 
-### Create Project 
+# Create Project 
 ```php
 composer create-project laravel/laravel project_name(or)
 composer create-project --prefer-dist laravel/laravel project_name
@@ -76,18 +76,38 @@ $table->string('field_name', 255)->nullable();
 $table->string('field_name', 255)->nullable();           
 $table->timestamps();
 ```
+### Add Field in a table
+```
+php artisan make:migration add_field_to_table_name_table
+```
+```
+public function up()
+{
+	Schema::table('comment', function (Blueprint $table) {
+		$table->integer("paid")->unsigned();
+		$table->string('test', 255)->nullable();
+		$table->text('note')->nullable();
+	});
+}
+public function down()
+{
+	Schema::table('comment', function (Blueprint $table) {
+			$table->dropColumn(['paid', 'test', 'note']);
+	});
+}
+```
 
-### Create Controller
+# Create Controller
 ```php
 >> php artisan make:controller Auth/AdminController
 ```
 
-### Create Model
+# Create Model
 ```php
 >> php artisan make:model Registration
 ```
 
-### Create Middalware
+# Create Middalware
 ```php
 php artisan make:middleware AccessControl
 ```
