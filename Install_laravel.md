@@ -40,6 +40,8 @@ DB_DATABASE=#Your database name
 DB_USERNAME=root #Your database username
 DB_PASSWORD=#Your database password
 ```
+# Database Migrate
+
 __All Excecute file__
 ```php
 php artisan migrate
@@ -63,7 +65,7 @@ public function boot()
 }
 ```
 
-### Database Migrate
+
 __Create migrate file__
 ```php
 php artisan make:migration create_table_name_table
