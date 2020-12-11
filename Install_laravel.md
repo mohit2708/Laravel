@@ -25,6 +25,12 @@ composer create-project --prefer-dist laravel/laravel:^7.0 project_name
 D:\xampp7.3\htdocs\mohit\test>php artisan --version
 ```
 
+### Server Run
+```php
+php artisan serve
+php artisan serve --port=1212
+```
+
 ### Setup Database Credentials
 ```php
 DB_CONNECTION=mysql
@@ -33,6 +39,28 @@ DB_PORT=3306
 DB_DATABASE=#Your database name
 DB_USERNAME=root #Your database username
 DB_PASSWORD=#Your database password
+```
+__All Excecute file__
+```php
+php artisan migrate
+```
+
+__Excute File__
+```php
+php artisan migrate --path=/database/migrations/fileName.php
+```
+
+__Jab Migrate Command Run Karte Hai to Some error aati hai
+```php
+app->providers->AppServiceProvider.php
+============add code========
+use Illuminate\Support\ServiceProvider;
+use Illuminate\Support\Facades\Schema;
+
+public function boot()
+{
+ Schema::defaultStringLength(191);
+}
 ```
 
 ### Database Migrate
@@ -62,34 +90,6 @@ $table->timestamps();
 php artisan make:middleware AccessControl
 ```
 
-__All Excecute file__
-```php
-php artisan migrate
-```
-
-__Excute File__
-```php
-php artisan migrate --path=/database/migrations/fileName.php
-```
-
-__Jab Migrate Command Run Karte Hai to Some error aati hai
-```php
-app->providers->AppServiceProvider.php
-============add code========
-use Illuminate\Support\ServiceProvider;
-use Illuminate\Support\Facades\Schema;
-
-public function boot()
-{
- Schema::defaultStringLength(191);
-}
-```
-
-### Server Run
-```php
-php artisan serve
-php artisan serve --port=1212
-```
 
 ### Anchor Tag Redirect
 ```php
