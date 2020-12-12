@@ -97,6 +97,27 @@ public function down()
 }
 ```
 
+# auth command for 7
+* composer require laravel/ui "^2.0"
+* php artisan ui bootstrap --auth
+
+### For Email
+
+lesssecureapps
+https://myaccount.google.com/lesssecureapps?pli=1&rapt=AEjHL4NWTPE5D77AVhWCCcaMo9Kx-wK5qNPeHrcgsfDXis4MZc2QWmUs5i3Fgv8QjaMHo8UuzjtMsAUg3Py94zQ6dOqqHlZH8g
+
+```
+========env file======================
+MAIL_MAILER=smtp
+MAIL_HOST=smtp.gmail.com
+MAIL_PORT=587
+MAIL_USERNAME=digiscript.jamaica@gmail.com
+MAIL_PASSWORD=Chetu@123
+MAIL_ENCRYPTION=tls
+MAIL_FROM_ADDRESS=digiscript.jamaica@gmail.com
+MAIL_FROM_NAME="${APP_NAME}"
+```
+
 # Create Controller
 ```php
 >> php artisan make:controller Auth/AdminController
