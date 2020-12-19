@@ -1,0 +1,84 @@
+/* Smartphones (portrait and landscape) ----------- */
+@media only screen and (min-device-width : 320px) and (max-device-width : 767px) {
+
+    .log50left {
+        width: 100%;
+        padding: 0px 10px;
+    }
+    .log50right {
+        width: 100%;
+        padding: 0px 10px;
+    }
+    .loginForm {
+        padding: 15px 15px;
+    }
+    .logoContent p {
+        line-height: 30px;
+        font-size: 18px;
+    }
+    .loginSec {
+        height: auto;
+        padding: 20px 0px;
+    }
+    .logoContent h2 {
+        margin-bottom: 10px;
+    }
+    .logSec {
+        margin-bottom: 20px;
+    }
+    .SignupForm {
+        padding: 20px 20px;
+    }
+    }
+    
+    
+    
+    
+    /* iPads (portrait and landscape) ----------- */
+    @media only screen and (min-device-width : 768px) and (max-device-width : 1024px) {
+    .logincontainer .align-items-center {
+        display: grid !important;
+    }
+    .log50left {
+        width: 100%;
+        padding: 0px 50px;
+        margin-bottom: 80px;
+    }
+    .log50right {
+        width: 100%;
+        padding: 0px 80px;
+    }
+    .loginSec {
+        height: auto;
+        padding: 60px;
+    }
+    }
+    
+    /* iPads (portrait) ----------- */
+    @media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : portrait) {
+    
+    }
+    /**********
+    iPad 3
+    **********/
+    @media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : landscape) and (-webkit-min-device-pixel-ratio : 2) {
+    /* Styles */
+    }
+    
+    @media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : portrait) and (-webkit-min-device-pixel-ratio : 2) {
+    /* Styles */
+    }
+    /* Desktops and laptops ----------- */
+    @media only screen  and (min-width : 1224px) {
+    /* Styles */
+    }
+    
+    /* Large screens ----------- */
+    @media only screen  and (min-width : 1824px) {
+    .log50right {
+        padding: 0px 200px;
+    }
+    .log50left {
+        padding: 0px 200px;
+    }
+    }
