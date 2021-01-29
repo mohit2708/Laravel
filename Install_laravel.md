@@ -72,8 +72,9 @@ php artisan make:migration create_table_name_table
 ```
 ```
 $table->increments('id');
-$table->string('field_name', 255)->nullable();
-$table->string('field_name', 255)->nullable();           
+$table->integer('baarcode')->nullable();
+$table->string('field_name', 255)->nullable();  
+$table->enum('status',[0,1])->default(0);
 $table->timestamps();
 ```
 ### Add Field in a table
