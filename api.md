@@ -159,6 +159,12 @@ class LoginController extends Controller
 
 ```
 
+**Api Hit In Postman:**
+```php
+http://localhost/chetu/lfbag_user/user_fbag/api/login
+http://localhost/chetu/lfbag_user/user_fbag/api/register
+```
+
 
 
 
