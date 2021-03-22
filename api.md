@@ -1,4 +1,5 @@
 ## Api Create using JWT authentication
+__https://blog.pusher.com/laravel-jwt/__
 
 **Step1:-**  Installing the jwt-auth package.
 ```php
