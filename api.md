@@ -31,6 +31,49 @@ Route::post('/login', 'Api\LoginController@login');
 Route::post('/register', 'Api\LoginController@register');
 ```
 
+**We need to make the User model implement JWT. Open app/User.php file and replace the content with this:**
+```php
+<?php
+
+    namespace App;
+
+    use Illuminate\Notifications\Notifiable;
+    use Illuminate\Foundation\Auth\User as Authenticatable;
+    use Tymon\JWTAuth\Contracts\JWTSubject;
+
+    class User extends Authenticatable implements JWTSubject
+    {
+        use Notifiable;
+
+        /**
+         * The attributes that are mass assignable.
+         *
+         * @var array
+         */
+        protected $fillable = [
+            'name', 'email', 'password',
+        ];
+
+        /**
+         * The attributes that should be hidden for arrays.
+         *
+         * @var array
+         */
+        protected $hidden = [
+            'password', 'remember_token',
+        ];
+
+        public function getJWTIdentifier()
+        {
+            return $this->getKey();
+        }
+        public function getJWTCustomClaims()
+        {
+            return [];
+        }
+    }
+```
+
 **Create Control-**
 ```php
 <?php
