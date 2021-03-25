@@ -410,7 +410,19 @@ __In View__
 </table>
 ```
 
+### Ques. How to redirect http to https?
+**In .htacess file**
 
+```
+<IfModule mod_rewrite.c>
+    # Redirect everything to https
+    RewriteEngine On
+    RewriteCond %{HTTPS} off [OR]
+    RewriteCond %{HTTP_HOST} ^www\. [NC]
+    RewriteCond %{HTTP_HOST} ^(?:www\.)?(.+)$ [NC]
+    RewriteRule ^ https://%1%{REQUEST_URI} [L,NE,R=301]
+</IfModule>
+```
 
 
 
