@@ -386,3 +386,97 @@ public function getUserById(Request $request){
     return $user;
 }
 ```
+What are named routes in Laravel?
+Route::get('user/profile', 'UserController@showProfile')->name('profile');
+What is database migration. How to create migration via artisan ?
+Migrations are like version control for your database, that’s allow your team to easily modify and share the application’s database schema. Migrations are typically paired with Laravel’s schema builder to easily build your application’s database schema.
+Use below commands to create migration data via artisan.
+php artisan make:migration create_users_table
+What are service providers ?
+Service Providers are central place where all laravel application is bootstrapped . Your application as well all Laravel core services are also bootstrapped by service providers.
+All service providers extend the Illuminate\Support\ServiceProvider class. 
+Explain Laravel’s service container ?
+One of the most powerful feature of Laravel is its Service Container. It is a powerful tool for resolving class dependencies and performing dependency injection in Laravel.
+Dependency injection is a fancy phrase that essentially means class dependencies are “injected” into the class via the constructor or, in some cases, “setter” methods.
+What is composer ?
+Composer is a tool for managing dependency in PHP. It allows you to declare the libraries on which your project depends on and will manage (install/update) them for you.
+Laravel utilizes Composer to manage its dependencies.
+What are Laravel Contract’s ?
+Laravel’s Contracts are nothing but a set of interfaces that define the core services provided by the Laravel framework.
+What are Laravel eloquent?
+Laravel’s Eloquent ORM is simple Active Record implementation for working with your database. Laravel provide many different ways to interact with your database, Eloquent is most notable of them. Each database table has a corresponding “Model” which is used to interact with that table. Models allow you to query for data in your tables, as well as insert new records into the table.
+Below is sample usage for querying and inserting new records in Database with Eloquent.
+
+// Querying or finding records from products table where tag is 'new'
+$products= Product::where('tag','new');
+// Inserting new record 
+ $product =new Product;
+ $product->title="Iphone 7";
+ $product->price="$700";
+ $product->tag='iphone';
+ $product->save();
+How to enable query log in Laravel ?
+Use the enableQueryLog method to enable query log in Laravel
+
+DB::connection()->enableQueryLog(); 
+You can get array of the executed queries by using getQueryLog method:
+$queries = DB::getQueryLog();
+How to turn off CRSF protection for specific route in Laravel?
+To turn off CRSF protection in Laravel add following codes in “app/Http/Middleware/VerifyCsrfToken.php”
+ 
+//add an array of Routes to skip CSRF check
+private $exceptUrls = ['controller/route1', 'controller/route2'];
+ //modify this function
+public function handle($request, Closure $next) {
+ //add this condition foreach($this->exceptUrls as $route) {
+ if ($request->is($route)) {
+  return $next($request);
+ }
+}
+return parent::handle($request, $next);
+} 
+Does Laravel support caching?
+Yes, Laravel supports popular caching backends like Memcached and Redis.
+By default, Laravel is configured to use the file cache driver, which stores the serialized, cached objects in the file system.For large projects, it is recommended to use Memcached or Redis.
+Explain Laravel’s Middleware?
+As the name suggests, Middleware acts as a middleman between request and response. It is a type of filtering mechanism. For example, Laravel includes a middleware that verifies whether the user of the application is authenticated or not. If the user is authenticated, he will be redirected to the home page otherwise, he will be redirected to the login page.
+There are two types of Middleware in Laravel.
+Global Middleware: will run on every HTTP request of the application.
+Route Middleware: will be assigned to a specific route.
+How to use custom table in Laravel Modal ?
+You can use custom table in Laravel by overriding protected $table property of Eloquent.
+
+Below is sample uses
+
+class User extends Eloquent{
+ protected $table="my_user_table";
+
+} 
+List some Aggregates methods provided by query builder in Laravel ?
+Posted by Sharad Jaiswal
+•	count()
+•	max()
+•	min()
+•	avg()
+•	sum()
+•	Class − This is a programmer-defined data type, which includes local functions as well as local data. You can think of a class as a template for making many instances of the same kind (or class) of object.
+•	Object − An individual instance of the data structure defined by a class. You define a class once and then make many objects that belong to it. Objects are also known as instance.
+•	Member Variable − These are the variables defined inside a class. This data will be invisible to the outside of the class and can be accessed via member functions. These variables are called attribute of the object once an object is created.
+•	Member function − These are the function defined inside a class and are used to access object data.
+•	Inheritance − When a class is defined by inheriting existing function of a parent class then it is called inheritance. Here child class will inherit all or few member functions and variables of a parent class.
+•	Parent class − A class that is inherited from by another class. This is also called a base class or super class.
+•	Child Class − A class that inherits from another class. This is also called a subclass or derived class.
+•	Polymorphism − This is an object oriented concept where same function can be used for different purposes. For example function name will remain same but it make take different number of arguments and can do different task.
+•	Overloading − a type of polymorphism in which some or all of operators have different implementations depending on the types of their arguments. Similarly functions can also be overloaded with different implementation.
+•	Data Abstraction − Any representation of data in which the implementation details are hidden (abstracted).
+•	Encapsulation − refers to a concept where we encapsulate all the data and member functions together to form an object.
+•	Constructor − refers to a special type of function which will be called automatically whenever there is an object formation from a class.
+•	Destructor − refers to a special type of function which will be called automatically whenever an object is deleted or goes out of scope.
+
+
+
+
+
+```php
+
+```
