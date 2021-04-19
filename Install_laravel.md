@@ -117,6 +117,10 @@ public function run()
 	}
 }
 ```
+__Execute Seeder__
+```php
+php artisan db:seed --class=CountriesTableSeeder
+```
 
 # auth command for 7
 * composer require laravel/ui "^2.0"
