@@ -386,6 +386,7 @@ public function getUserById(Request $request){
     return $user;
 }
 ```
+```php
 What are named routes in Laravel?
 Route::get('user/profile', 'UserController@showProfile')->name('profile');
 What is database migration. How to create migration via artisan ?
@@ -473,10 +474,5 @@ Posted by Sharad Jaiswal
 •	Constructor − refers to a special type of function which will be called automatically whenever there is an object formation from a class.
 •	Destructor − refers to a special type of function which will be called automatically whenever an object is deleted or goes out of scope.
 
-
-
-
-
-```php
 
 ```
