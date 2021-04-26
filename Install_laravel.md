@@ -395,7 +395,7 @@ class Registration extends Model
 
 ### Show list from database:-
 __In Controler__
-```laravel
+```php
 use App\User;
 
 public function index()
@@ -413,7 +413,7 @@ public function index()
 }
 ```
 __In View__
-```laravel
+```php
 <table border = "1">
   <tr>
 	<td>Id</td>
