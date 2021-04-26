@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Employee;
 use App\Country;
+use App\State;
 use DB;
 
 class EmployeeController extends Controller
@@ -30,6 +31,18 @@ class EmployeeController extends Controller
 		$countries = Country::all();	
 		return view('admin.employee.add', compact('countries'));
 	}
+
+	public function fetchState(Request $request)
+    {
+        $data['states'] = State::where("country_id",$request->country_id)->get(["name", "id"]);
+        return response()->json($data);
+    }
+
+    public function fetchCity(Request $request)
+    {
+        $data['cities'] = City::where("state_id",$request->state_id)->get(["name", "id"]);
+        return response()->json($data);
+    }
 
 	/*
 	 * Employee Store Function

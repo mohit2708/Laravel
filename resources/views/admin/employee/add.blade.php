@@ -61,10 +61,10 @@
                <div class="col-md-4">
                   <div class="form-group">
                      <label>Country</label>
-                     <select class="form-control select2" style="width: 100%;">
+                     <select id="country-dd" class="form-control select2" style="width: 100%;">
                         <option selected="selected">-- Select Your Contry --</option>
                         @foreach($countries as $country)
-                        <option>{{$country->country_name}}</option>
+                        <option value="{{$country->id}}">{{$country->country_name}}</option>
                         @endforeach
                      </select>
                   </div>
@@ -72,28 +72,21 @@
                <div class="col-md-4">
                   <div class="form-group">
                      <label>State</label>
-                     <select class="form-control select2" style="width: 100%;">
+                     {{-- <select id="state-dd" class="form-control select2" style="width: 100%;">
                         <option selected="selected">-- Select Your State --</option>
-                        <option>Alaska</option>
-                        <option>California</option>
-                        <option>Delaware</option>
-                        <option>Tennessee</option>
-                        <option>Texas</option>
-                        <option>Washington</option>
-                     </select>
+                        <option>Alaska</option>                        
+                     </select> --}}
+                     <select id="state-dd" class="form-control">
+                        <option selected="selected">-- Select Your State --</option>
+                        </select>
                   </div>
                </div>
                <div class="col-md-4">
                   <div class="form-group">
                      <label>City</label>
-                     <select class="form-control select2" style="width: 100%;">
+                     <select id="city-dd" class="form-control select2" style="width: 100%;">
                         <option selected="selected">-- Select Your City --</option>
-                        <option>Alaska</option>
-                        <option>California</option>
-                        <option>Delaware</option>
-                        <option>Tennessee</option>
-                        <option>Texas</option>
-                        <option>Washington</option>
+                        <option>Alaska</option>                        
                      </select>
                   </div>
                </div>
@@ -111,3 +104,50 @@
 </section>
 </div>
 @include('layouts.admin.footer')
+   <script>
+        $(document).ready(function () {
+            $('#country-dd').on('change', function () {
+                var idCountry = this.value;                
+                $("#state-dd").html('');
+                $.ajax({
+                    url: "{{url('/ajax/state/')}}",
+                    type: "POST",
+                    data: {
+                        country_id: idCountry,
+                        _token: '{{csrf_token()}}'
+                    },
+                    dataType: 'json',
+                    success: function (result) {
+                     console.log(result);
+                        $('#state-dd').html('<option value="">-- Select State --</option>');
+                        $.each(result.states, function (key, value) {
+                            $("#state-dd").append('<option value="' + value
+                                .id + '">' + value.name + '</option>');
+                        });
+                        $('#city-dd').html('<option value="">Select City</option>');
+                    }
+                });
+            });
+            $('#state-dd').on('change', function () {
+                var idState = this.value;
+                $("#city-dd").html('');
+                $.ajax({
+                    url: "{{url('')}}",
+                    type: "POST",
+                    data: {
+                        state_id: idState,
+                        _token: '{{csrf_token()}}'
+                    },
+                    dataType: 'json',
+                    success: function (res) {
+                        $('#city-dd').html('<option value="">-- Select City-- </option>');
+                        $.each(res.cities, function (key, value) {
+                            $("#city-dd").append('<option value="' + value
+                                .id + '">' + value.name + '</option>');
+                        });
+                    }
+                });
+            });
+        });
+
+    </script>

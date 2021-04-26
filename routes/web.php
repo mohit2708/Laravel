@@ -34,3 +34,6 @@ Route::post('/admin/employee/store', 'admin\EmployeeController@store');
 Route::get('/admin/employee/edit/{id}', 'admin\EmployeeController@edit');
 Route::post('/admin/employee/update/{id}', 'admin\EmployeeController@update');
 Route::get('/admin/employee/delete/{id}', 'admin\EmployeeController@delete');
+
+
+Route::post('/ajax/state/', 'admin\EmployeeController@fetchState');
