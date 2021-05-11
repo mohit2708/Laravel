@@ -17,6 +17,9 @@
 
 **[⬆ Back to Top](#table-of-contents)**
 ### Ques. What is the Features of Laravel?
+* Inbuilt CRSF (cross-site request forgery ) Protection.
+* Inbuilt paginations
+* middleware
 * Eloquent ORM
 * Query builder available
 * Reverse Routing
@@ -26,8 +29,6 @@
 * Autamatic Pagination
 * Unit Testing
 * Homestead
-* Inbuilt CRSF (cross-site request forgery ) Protection.
-* Inbuilt paginations
 * Query builder 
 * Route caching 
 * IOC (Inverse of Control) Container Or service container.
