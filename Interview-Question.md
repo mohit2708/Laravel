@@ -214,11 +214,15 @@ $queries = DB::getQueryLog();
 ### Ques. What is reverse routing in Laravel?
 * Laravel reverse routing is generating URL's based on route declarations. Reverse routing makes your application so much more exible. It denes a relationship between links and Laravel routes. When a link is created by using names of existing routes, appropriate Uri's are created automatically by Laravel. Here is an example of reverse routing.<br>
 * Reverse routing is a method of generating URL based on symbol or name. It makes your Laravel application flexible.
-<br>
+
+```php
 // route declaration<br>
-Route::get(‘login’, ‘users@login’);<br>
-Using reverse routing we can create a link to it and pass in any parameters that we have dened. Optional parameters, if not supplied, are removed from the generated link.<br>
-{{ HTML::link_to_action('users@login') }} <br>
+Route::get(‘login’, ‘users@login’);
+```
+Using reverse routing we can create a link to it and pass in any parameters that we have dened. Optional parameters, if not supplied, are removed from the generated link.
+```php
+{{ HTML::link_to_action('users@login') }}
+```
 It will automatically generate an Url like http://xyz.com/login in view.
 
 **[⬆ Back to Top](#table-of-contents)**
