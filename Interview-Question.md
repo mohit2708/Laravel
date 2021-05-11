@@ -48,6 +48,13 @@
 3. Development in laravel is not so fast in compare to ruby on rails.<br>
 4. Laravel is lightweight so it has less inbuilt support in compare to django and rails. But this problem can be solved by integrating third party tools, but for large and very custom websites it may be a tedious task.
 
+
+**[⬆ Back to Top](#table-of-contents)**
+### Ques.What is composer?
+Composer is a tool for managing dependency in PHP. It allows you to declare the libraries on which your project depends on and will manage (install/update) them for you.
+Laravel utilizes Composer to manage its dependencies.
+
+
 **[⬆ Back to Top](#table-of-contents)**
 ### Ques.What are the steps to install Laravel with composer?
 Laravel installation steps:-
@@ -119,6 +126,7 @@ PHP artisan is the command line interface/tool included with Laravel. It provid
 * Scout 
 * Socialite 
 * Horizon
+* Telescope
 
 **[⬆ Back to Top](#table-of-contents)**
 ### Ques. What are named routes in Laravel?
@@ -400,9 +408,6 @@ All service providers extend the Illuminate\Support\ServiceProvider class.
 Explain Laravel’s service container ?
 One of the most powerful feature of Laravel is its Service Container. It is a powerful tool for resolving class dependencies and performing dependency injection in Laravel.
 Dependency injection is a fancy phrase that essentially means class dependencies are “injected” into the class via the constructor or, in some cases, “setter” methods.
-What is composer ?
-Composer is a tool for managing dependency in PHP. It allows you to declare the libraries on which your project depends on and will manage (install/update) them for you.
-Laravel utilizes Composer to manage its dependencies.
 What are Laravel Contract’s ?
 Laravel’s Contracts are nothing but a set of interfaces that define the core services provided by the Laravel framework.
 What are Laravel eloquent?
