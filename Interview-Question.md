@@ -75,8 +75,8 @@ Routes are stored inside files under the /routes folder inside the project's roo
 
 **[⬆ Back to Top](#table-of-contents)**
 ### Ques. Explain Events in laravel?
-An event is an action or occurrence recognized by a program that may be handled by the program or code. Laravel events provides a simple observer implementation, that allowing you to subscribe and listen for various events/actions that occur in your application.<br>
-All Event classes are generally stored in the app/Events directory, while their listeners are stored in app/Listeners of your application.
+* An event is an action or occurrence recognized by a program that may be handled by the program or code. Laravel events provides a simple observer implementation, that allowing you to subscribe and listen for various events/actions that occur in your application.
+* All Event classes are generally stored in the app/Events directory, while their listeners are stored in app/Listeners of your application.
 
 **[⬆ Back to Top](#table-of-contents)**
 ### Ques. Explain validations in laravel? 
