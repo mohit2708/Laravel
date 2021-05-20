@@ -448,6 +448,75 @@ __In View__
 </IfModule>
 ```
 
+### Add custom field on registraion time
+__Ceate Migration File__
+php artisan make:migration add_fields_to_users
+```php
+public function up()
+{
+    Schema::table('users', function (Blueprint $table) {
+        $table->string('username')->after('password')->unique()->nullable();
+        $table->string('gender', 15)->after('username')->nullable();
+        $table->bigInteger('mobile_no')->after('bio')->nullable();
+        $table->string('image')->after('mobile_no')->nullable();
+    });
+}
+
+public function down()
+{
+    Schema::table('users', function (Blueprint $table) {
+        $table->dropColumn(['username', 'gender', 'age', 'bio', 'mobile_no', 'image']);
+    });
+}
+```
+* php artisan migrate
+* php artisan migrate --path=/database/migrations/fileName.php
+
+Go to __resources/auth/register.blade.php__ and edit the registration form by adding the below HTML code
+```php
+<label>Phone</label>
+<div class="col-md-6">
+<input id="phone" type="text" class="form-control @error('phone') is-invalid @enderror" name="phone" required >
+@error('phone')
+<span class="invalid-feedback" role="alert">
+<strong>{{ $message }}</strong>
+</span>
+@enderror
+</div>
+```
+
+Open __RegisterController.php__ controller found in __app/Http/Controllers/Auth__, and modify the validator. It will look like this.
+```php
+protected function validator(array $data)
+{
+return Validator::make($data, [
+'name' => ['required', 'string', 'max:255'],
+'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
+'password' => ['required', 'string', 'min:8', 'confirmed'],
+'phone' => ['required', 'numeric', 'min:11']
+]);
+}
+
+After this, scroll down in the same file and modify the create function. It will look like
+
+protected function create(array $data)
+{
+return User::create([
+'name' => $data['name'],
+'email' => $data['email'],
+'password' => Hash::make($data['password']),
+'phone' => $data['phone']
+]);
+}
+```
+
+file open __app/User.php__ and add ‘phone’ field in the $fillable property and save the file.
+```php
+protected $fillable = [
+'name', 'email', 'password','phone',
+];
+```
+
 
 
 
