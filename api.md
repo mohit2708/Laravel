@@ -147,6 +147,11 @@ class LoginController extends Controller
                     $validator->validated(),
                     ['password' => bcrypt($request->password)]
                 ));
+                //   $user = User::create([
+                //   'name' => $request->name,
+                //   'email' => $request->email,
+                //   'password' => bcrypt($request->password),
+                // ]);
 
         return response()->json([
             'message' => 'User successfully registered',
@@ -206,7 +211,16 @@ class LoginController extends Controller
 **Api Hit In Postman:**
 ```php
 http://localhost/chetu/lfbag_user/user_fbag/api/login
+body->formdata
+email     xxxxx
+password  xxxxx
 http://localhost/chetu/lfbag_user/user_fbag/api/register
+body->formdata
+name
+email
+password
+password_confirmation
+age
 ```
 
 
