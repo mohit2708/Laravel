@@ -517,7 +517,16 @@ protected $fillable = [
 ];
 ```
 
+## Laravel Api
+```php
+http://localhost/chetu/lfbag_user/user_fbag/api/login
 
+body -> form data
+email     xyz@abc.com
+pass       xxxxxxx 
+
+http://localhost/chetu/lfbag_user/user_fbag/api/register
+```
 
 
 
