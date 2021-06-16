@@ -63,7 +63,7 @@ class DealsController extends Controller
 			$deals->deal_from 	= $request->flight_from;
 			$deals->deal_to 	= $request->flight_to;
 			$deals->deal_desc 	= $request->description;
-			$deals->max_flight 	= $request->flight_count;			
+			$deals->max_flight 	= $request->flight_count;
 			$deals->save();
 
 			if($request->deals_image){
