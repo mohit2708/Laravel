@@ -17,19 +17,15 @@ class DealsController extends Controller
 	* Deals List
 	*/
 	
-    public function index(Request $request){
-				
+    public function index(Request $request){				
 		$name = $request->get('name');
         try{
             $arrDeal = Deals::select('flight_deals.*');
-									if($name){
-										$arrDeal->where('deal_name', 'like', '%'.$name.'%');
-									}
-			$arrDeal = $arrDeal->orderBy('id', 'desc')
-									->paginate(10);
-			
+			if($name){
+				$arrDeal->where('deal_name', 'like', '%'.$name.'%');
+			}
+			$arrDeal = $arrDeal->orderBy('id', 'desc')->paginate(10);			
             return view('admin.deals.index', compact('arrDeal'));
-
         }catch(\Exception $ex){ 
             return redirect()->back()->with('error', 'Error occurred. Please Try again!');
         }
@@ -39,8 +35,7 @@ class DealsController extends Controller
 	* Deals Add Get Method
 	*/
 	
-	public function add(){
-		
+	public function add(){		
 		return view('admin.deals.add');
 	}
 	
