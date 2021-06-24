@@ -51,9 +51,12 @@
 
 **[⬆ Back to Top](#table-of-contents)**
 ### Ques.What is composer?
-Composer is a tool for managing dependency in PHP. It allows you to declare the libraries on which your project depends on and will manage (install/update) them for you.
-Laravel utilizes Composer to manage its dependencies.
-
+* Composer is the package manager for the framework.
+* It helps in adding new packages from the huge community into your laravel application.
+Example:-
+```php
+composer requires laravel/passport
+```
 
 **[⬆ Back to Top](#table-of-contents)**
 ### Ques.What are the steps to install Laravel with composer?
