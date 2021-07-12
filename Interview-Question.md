@@ -13,7 +13,7 @@
 * It is created by __Taylor Otwell__. 
 * Laravel provides expressive and elegant syntax that helps in creating a wonderful web application easily and quickly.
 * The first version of laravel is released on 9 June 2011.
-* The latest version of Laravel is 7.0. It released on 3rd March 2020.
+* The __latest version__ of Laravel is __8.0__.
 
 **[⬆ Back to Top](#table-of-contents)**
 ### Ques. What is the Features of Laravel?
