@@ -68,6 +68,8 @@ If you did not mention any particular version, then it will install with the lat
 ### Ques.What is composer?
 * Composer is the package manager for the framework.
 * It helps in adding new packages from the huge community into your laravel application.
+* * Composer is a tool for managing dependency in PHP. It allows you to declare the libraries on which your project depends on and will manage (install/update) them for you.<br> Laravel utilizes Composer to manage its dependencies.
+* It is an application-level package manager for PHP. It provides a standard format for managing PHP software dependencies and libraries.
 Example:-
 ```php
 composer requires laravel/passport
@@ -81,11 +83,6 @@ __Syntax:-__
 ```php
 {{$variable}};  
 ```
-
-**[⬆ Back to Top](#table-of-contents)**
-### Ques. What is composer?
-* Composer is a tool for managing dependency in PHP. It allows you to declare the libraries on which your project depends on and will manage (install/update) them for you.<br> Laravel utilizes Composer to manage its dependencies.
-* It is an application-level package manager for PHP. It provides a standard format for managing PHP software dependencies and libraries.
 
 **[⬆ Back to Top](#table-of-contents)**
 ### Ques. What is a Route?
