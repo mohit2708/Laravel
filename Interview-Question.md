@@ -5,7 +5,8 @@
 | No. | Questions |
 |:----:| ---------
 |1  | [What is Laravel?](#Ques-What-is-Laravel) |
-|   | [What are pros and cons of using Laravel Framework?](#Ques-What-is-Laravel) |
+|   | [What is the Features of Laravel?](#Ques-What-is-the-Features-of-Laravel) |
+|   | [What are pros and cons of using Laravel Framework?](#Ques-What-is-the-Features-of-Laravel) |
 
 **[⬆ Back to Top](#table-of-contents)**
 ### Ques. What is Laravel?
