@@ -8,6 +8,7 @@
 |   | [What is the Features of Laravel?](#Ques-What-is-the-Features-of-Laravel) |
 |   | [What are pros and cons of using Laravel Framework?](#Ques-What-are-pros-and-cons-of-using-Laravel-Framework) |
 |   | [What are the steps to install Laravel with composer?](#Ques-What-are-the-steps-to-install-Laravel-with-composer) |
+|   | [What is composer?](#Ques-What-is-composer) |
 
 **[⬆ Back to Top](#table-of-contents)**
 ### Ques. What is Laravel?
