@@ -9,6 +9,7 @@
 |   | [What are pros and cons of using Laravel Framework?](#Ques-What-are-pros-and-cons-of-using-Laravel-Framework) |
 |   | [What are the steps to install Laravel with composer?](#Ques-What-are-the-steps-to-install-Laravel-with-composer) |
 |   | [What is composer?](#Ques-What-is-composer) |
+|   | [What is the templating engine used in Laravel?](#Ques-What-is-the-templating-engine-used-in-Laravel) |
 
 **[⬆ Back to Top](#table-of-contents)**
 ### Ques. What is Laravel?
@@ -38,7 +39,7 @@
 
 
 **[⬆ Back to Top](#table-of-contents)**
-### Ques. What are pros and cons of using Laravel Framework?
+### Ques.What are pros and cons of using Laravel Framework?
 ###### Pros of using Laravel Framework
 1. Laravel framework has in-built lightweight blade template engine to speed up compiling task and create layouts with dynamic content easily.<br>
 2. Hassles code reusability.<br>
@@ -70,6 +71,15 @@ If you did not mention any particular version, then it will install with the lat
 Example:-
 ```php
 composer requires laravel/passport
+```
+
+**[⬆ Back to Top](#table-of-contents)**
+### Ques.What is the templating engine used in Laravel?
+* The templating engine used in Laravel is __Blade__.
+* __Displaying data__ If you want to print the value of a variable, then you can do so by simply enclosing the variable within the curly brackets.<br>
+__Syntax:-__
+```php
+{{$variable}};  
 ```
 
 **[⬆ Back to Top](#table-of-contents)**
