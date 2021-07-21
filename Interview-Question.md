@@ -12,7 +12,7 @@
 |   | [What is the templating engine used in Laravel?](#Ques-What-is-the-templating-engine-used-in-Laravel) |
 |   | [What is PHP artisan List out some artisan commands?](#Ques-What-is-PHP-artisan-List-out-some-artisan-commands) |
 |   | [How to put Laravel applications in maintenance mode?](#Ques-How-to-put-Laravel-applications-in-maintenance-mode) |
-
+|   | [What is database migration and How to create migration via artisan?](#Ques-What-is-database-migration-and-How-to-create-migration-via-artisan) |
 
 
 
@@ -173,9 +173,9 @@ Once you have assigned a name to your routes, you may use the route's name when 
 ```
 
 **[⬆ Back to Top](#table-of-contents)**
-### Ques. What is database migration. How to create migration via artisan?
-Migrations are like version control for your database, that’s allow your team to easily modify and share the application’s database schema. Migrations are typically paired with Laravel’s schema builder to easily build your application’s database schema.<br>
-Use below commands to create migration data via artisan.
+### Ques.What is database migration and How to create migration via artisan?
+* Migrations are used to create database schemas in Laravel.
+* In migration files, we store which table to create, update or delete.
 ```
 // creating Migration 
 php artisan make:migration create_users_table
