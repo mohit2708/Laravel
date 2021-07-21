@@ -7,6 +7,7 @@
 |1  | [What is Laravel?](#Ques-What-is-Laravel) |
 |   | [What is the Features of Laravel?](#Ques-What-is-the-Features-of-Laravel) |
 |   | [What are pros and cons of using Laravel Framework?](#Ques-What-are-pros-and-cons-of-using-Laravel-Framework) |
+|   | [What are the steps to install Laravel with composer?](#Ques-What-are-the-steps-to-install-Laravel-with-composer) |
 
 **[⬆ Back to Top](#table-of-contents)**
 ### Ques. What is Laravel?
@@ -49,16 +50,6 @@
 3. Development in laravel is not so fast in compare to ruby on rails.<br>
 4. Laravel is lightweight so it has less inbuilt support in compare to django and rails. But this problem can be solved by integrating third party tools, but for large and very custom websites it may be a tedious task.
 
-
-**[⬆ Back to Top](#table-of-contents)**
-### Ques.What is composer?
-* Composer is the package manager for the framework.
-* It helps in adding new packages from the huge community into your laravel application.
-Example:-
-```php
-composer requires laravel/passport
-```
-
 **[⬆ Back to Top](#table-of-contents)**
 ### Ques.What are the steps to install Laravel with composer?
 Laravel installation steps:-
@@ -70,6 +61,15 @@ OR<br>
 If you install some particular version, then you can use<br>
 composer create-project laravel/laravel project name "5.6"<br>
 If you did not mention any particular version, then it will install with the latest version.
+
+**[⬆ Back to Top](#table-of-contents)**
+### Ques.What is composer?
+* Composer is the package manager for the framework.
+* It helps in adding new packages from the huge community into your laravel application.
+Example:-
+```php
+composer requires laravel/passport
+```
 
 **[⬆ Back to Top](#table-of-contents)**
 ### Ques. What is composer?
