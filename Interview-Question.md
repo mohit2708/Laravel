@@ -45,7 +45,7 @@
 
 
 **[⬆ Back to Top](#table-of-contents)**
-### Ques.What are pros and cons of using Laravel Framework?
+### Ques. What are pros and cons of using Laravel Framework?
 ###### Pros of using Laravel Framework
 1. Laravel framework has in-built lightweight blade template engine to speed up compiling task and create layouts with dynamic content easily.<br>
 2. Hassles code reusability.<br>
@@ -59,7 +59,7 @@
 4. Laravel is lightweight so it has less inbuilt support in compare to django and rails. But this problem can be solved by integrating third party tools, but for large and very custom websites it may be a tedious task.
 
 **[⬆ Back to Top](#table-of-contents)**
-### Ques.What are the steps to install Laravel with composer?
+### Ques. What are the steps to install Laravel with composer?
 Laravel installation steps:-
 * Download composer from https://getcomposer.org/download (if you don’t have a composer on your system)
 * Open cmd
@@ -71,7 +71,7 @@ composer create-project laravel/laravel project name "5.6"<br>
 If you did not mention any particular version, then it will install with the latest version.
 
 **[⬆ Back to Top](#table-of-contents)**
-### Ques.What is composer?
+### Ques. What is composer?
 * Composer is the package manager for the framework.
 * It helps in adding new packages from the huge community into your laravel application.
 * * Composer is a tool for managing dependency in PHP. It allows you to declare the libraries on which your project depends on and will manage (install/update) them for you.<br> Laravel utilizes Composer to manage its dependencies.
@@ -82,7 +82,7 @@ composer requires laravel/passport
 ```
 
 **[⬆ Back to Top](#table-of-contents)**
-### Ques.What is the templating engine used in Laravel?
+### Ques. What is the templating engine used in Laravel?
 * The templating engine used in Laravel is __Blade__.
 * __Displaying data__ If you want to print the value of a variable, then you can do so by simply enclosing the variable within the curly brackets.<br>
 __Syntax:-__
@@ -91,7 +91,7 @@ __Syntax:-__
 ```
 
 **[⬆ Back to Top](#table-of-contents)**
-### Ques.How to put Laravel applications in maintenance mode?
+### Ques. How to put Laravel applications in maintenance mode?
 Laravel applications can be put into maintenance mode using the below command:
 ```php
 php artisan down
@@ -130,7 +130,7 @@ $validatedData = $request->validate([
 ```
 
 **[⬆ Back to Top](#table-of-contents)**
-### Ques.What is PHP artisan List out some artisan commands?
+### Ques. What is PHP artisan List out some artisan commands?
 Artisan is the command-line tool for Laravel to help the developer build the application.<br> Here are the list of some artisan commands:-<br>
 * php artisan list
 * php artisan help
@@ -173,7 +173,7 @@ Once you have assigned a name to your routes, you may use the route's name when 
 ```
 
 **[⬆ Back to Top](#table-of-contents)**
-### Ques.What is database migration and How to create migration via artisan?
+### Ques. What is database migration and How to create migration via artisan?
 * Migrations are used to create database schemas in Laravel.
 * In migration files, we store which table to create, update or delete.
 ```
