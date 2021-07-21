@@ -11,6 +11,9 @@
 |   | [What is composer?](#Ques-What-is-composer) |
 |   | [What is the templating engine used in Laravel?](#Ques-What-is-the-templating-engine-used-in-Laravel) |
 |   | [What is PHP artisan List out some artisan commands?](#Ques-What-is-PHP-artisan-List-out-some-artisan-commands) |
+|   | [How to put Laravel applications in maintenance mode?](#Ques-How-to-put-Laravel-applications-in-maintenance-mode) |
+
+
 
 
 
@@ -86,6 +89,18 @@ __Syntax:-__
 ```php
 {{$variable}};  
 ```
+
+**[⬆ Back to Top](#table-of-contents)**
+### Ques.How to put Laravel applications in maintenance mode?
+Laravel applications can be put into maintenance mode using the below command:
+```php
+php artisan down
+```
+And can put the application again on live using the below command:
+```php
+php artisan up
+```
+
 
 **[⬆ Back to Top](#table-of-contents)**
 ### Ques. What is a Route?
