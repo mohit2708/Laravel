@@ -10,6 +10,9 @@
 |   | [What are the steps to install Laravel with composer?](#Ques-What-are-the-steps-to-install-Laravel-with-composer) |
 |   | [What is composer?](#Ques-What-is-composer) |
 |   | [What is the templating engine used in Laravel?](#Ques-What-is-the-templating-engine-used-in-Laravel) |
+|   | [What is PHP artisan List out some artisan commands?](#Ques-What-is-PHP-artisan-List-out-some-artisan-commands) |
+
+
 
 **[⬆ Back to Top](#table-of-contents)**
 ### Ques. What is Laravel?
@@ -112,16 +115,8 @@ $validatedData = $request->validate([
 ```
 
 **[⬆ Back to Top](#table-of-contents)**
-### Ques. How to install laravel via composer?
-You can install Laravel via composer by running below command.
-```php
-composer create-project laravel/laravel your-project-name version 
-```
-
-
-**[⬆ Back to Top](#table-of-contents)**
-### Ques. What is PHP artisan. List out some artisan commands?
-PHP artisan is the command line interface/tool included with Laravel. It provides a number of helpful commands that can help you while you build your application easily. Here are the list of some artisan commands:-<br>
+### Ques.What is PHP artisan List out some artisan commands?
+Artisan is the command-line tool for Laravel to help the developer build the application.<br> Here are the list of some artisan commands:-<br>
 * php artisan list
 * php artisan help
 * php artisan tinker
