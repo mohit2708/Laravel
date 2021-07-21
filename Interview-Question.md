@@ -7,6 +7,7 @@
 |1  | [What is Laravel?](#Ques-What-is-Laravel) |
 |   | [What is the Features of Laravel?](#Ques-What-is-the-Features-of-Laravel) |
 |   | [What are pros and cons of using Laravel Framework?](#Ques-What-are-pros-and-cons-of-using-Laravel-Framework) |
+|   | [What are available databases supported by Laravel?](#Ques-What-are-available-databases-supported-by-Laravel) |
 |   | [What are the steps to install Laravel with composer?](#Ques-What-are-the-steps-to-install-Laravel-with-composer) |
 |   | [What is composer?](#Ques-What-is-composer) |
 |   | [What is the templating engine used in Laravel?](#Ques-What-is-the-templating-engine-used-in-Laravel) |
@@ -57,6 +58,13 @@
 2. Laravel is new framework and composer is not so strong in compare to npm (for node.js), ruby gems and python pip.<br>
 3. Development in laravel is not so fast in compare to ruby on rails.<br>
 4. Laravel is lightweight so it has less inbuilt support in compare to django and rails. But this problem can be solved by integrating third party tools, but for large and very custom websites it may be a tedious task.
+
+**[⬆ Back to Top](#table-of-contents)**
+### Ques. What are available databases supported by Laravel?
+* PostgreSQL
+* SQL Server
+* SQLite
+* MySQL
 
 **[⬆ Back to Top](#table-of-contents)**
 ### Ques. What are the steps to install Laravel with composer?
