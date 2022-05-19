@@ -1,4 +1,4 @@
-
+```php
 <a id="all_deliver_done" class="delete btn btn-link" data-toggle="modal"> 
     <button id="" class="btn btn-primary" onclick="event.preventDefault()">All Delivery Done</button></a>
 
@@ -55,3 +55,4 @@ $('button#confirm').click(function(e){
    }});
 });
 </script>
+```
