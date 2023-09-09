@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Admin\UserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,9 +18,13 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Auth::routes();
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+# User Managment Routes
+Route::get('/user/list', [UserController::class, 'index']);
+Route::get('/user/create', [UserController::class, 'create']);
+// Route::post('/user-management/store', [UserController::class, 'store']);
+Route::get('/user/edit/{id}', [UserController::class, 'edit']);
+// Route::post('/user-management/update', [UserController::class, 'update']);
+// Route::get('/user-management/delete/{id}', [UserController::class, 'delete']);
 
 Auth::routes();
 
