@@ -14,8 +14,12 @@ use App\Http\Controllers\Admin\UserController;
 |
 */
 
+// Route::get('/', function () {
+//     return view('welcome');
+// });
+
 Route::get('/', function () {
-    return view('welcome');
+    return Redirect::to('/login');
 });
 
 # User Managment Routes
